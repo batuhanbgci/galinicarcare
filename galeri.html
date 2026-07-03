@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png?v=2">
+    <link rel="stylesheet" href="css/common-footer.css">
+    <link rel="stylesheet" href="css/before-after.css">
+    <link rel="stylesheet" href="css/galeri.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <title>GALİNİ - Galeri</title>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/icon.png" alt="GALİNİ Logo" class="logo-icon">
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Anasayfa</a></li>
+                    <li class="dropdown">
+                        <a href="#">Hizmetlerimiz ▼</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="boya-koruma-uygulamalari.html">Boya Koruma Uygulamaları</a></li>
+                            <li><a href="detayli-temizlik.html">Detaylı Temizlik</a></li>
+                            <li><a href="ppf-kaplama.html">PPF Kaplama</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                    <li><a href="before-after.html">Before / After</a></li>
+                    <li><a href="galeri.html" class="active">Galeri</a></li>
+                    <li><a href="fiyat-listesi.html">Fiyat Listesi</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                </ul>
+            </nav>
+            <a class="instagram-link" href="https://www.instagram.com/galini_detailing" target="_blank" rel="noopener noreferrer" aria-label="Instagram - galini_detailing">
+                <img src="img/instagram.png" alt="Instagram">
+                <span>Takip Et</span>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section class="section before-after-page">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Galeri</h2>
+                    <p>GALİNİ Detailing'in tamamlanan PPF kaplama ve detaylı bakım projelerini fotoğraflar ve videolarla yakından inceleyin.</p>
+                </div>
+
+                <div class="gallery-container">
+                    <!-- Gallery Grid -->
+                    <div class="gallery-grid">
+                        <!-- BMW 520i Card -->
+                        <div class="gallery-card" data-modal="bmw520i-modal" role="button" tabindex="0" aria-controls="bmw520i-modal" aria-label="Sıfır km BMW 520i galerisini aç">
+                            <div class="gallery-card-image">
+                                <img src="img/BMW 520İ/1.jpg" alt="BMW 520i" loading="lazy" decoding="async">
+                            </div>
+                            <div class="gallery-card-body">
+                                <div class="gallery-card-meta">
+                                    <span class="gallery-pill accent">PPF Kaplama</span>
+                                    <span class="gallery-pill">9 Fotoğraf</span>
+                                </div>
+                                <div class="gallery-card-title">Sıfır km BMW 520i</div>
+                                <span class="gallery-card-action">Projeyi incele</span>
+                            </div>
+                        </div>
+
+                        <!-- BMW X1 xDrive25e Card -->
+                        <div class="gallery-card" data-modal="bmwx1-modal" role="button" tabindex="0" aria-controls="bmwx1-modal" aria-label="Sıfır km BMW X1 xDrive25e galerisini aç">
+                            <div class="gallery-card-image">
+                                <img src="img/BMW X1 xDrive25e/1.jpg" alt="BMW X1 xDrive25e" loading="lazy" decoding="async">
+                            </div>
+                            <div class="gallery-card-body">
+                                <div class="gallery-card-meta">
+                                    <span class="gallery-pill accent">PPF Kaplama</span>
+                                    <span class="gallery-pill">12 Fotoğraf</span>
+                                    <span class="gallery-pill">3 Video</span>
+                                </div>
+                                <div class="gallery-card-title">Sıfır km BMW X1 xDrive25e</div>
+                                <span class="gallery-card-action">Projeyi incele</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Volkswagen Caddy Card -->
+                        <div class="gallery-card" data-modal="volkswagen-caddy-modal" role="button" tabindex="0" aria-controls="volkswagen-caddy-modal" aria-label="Volkswagen Caddy galerisini aç">
+                            <div class="gallery-card-image">
+                                <img src="img/Volkswagen Caddy/1.jpg" alt="Volkswagen Caddy" loading="lazy" decoding="async">
+                            </div>
+                            <div class="gallery-card-body">
+                                <div class="gallery-card-meta">
+                                    <span class="gallery-pill accent">PPF Kaplama</span>
+                                    <span class="gallery-pill">11 Fotoğraf</span>
+                                    <span class="gallery-pill">2 Video</span>
+                                </div>
+                                <div class="gallery-card-title">Volkswagen Caddy - Sıfır km</div>
+                                <span class="gallery-card-action">Projeyi incele</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- BMW 520i Modal -->
+                    <div class="gallery-modal" id="bmw520i-modal">
+                        <button class="modal-nav-btn prev-modal" type="button" aria-label="Önceki projeye geç"></button>
+                        
+                        <div class="gallery-modal-content">
+                            <button class="gallery-modal-close" type="button" aria-label="Galeriyi kapat">&times;</button>
+                            
+                            <div class="gallery-slider-wrapper">
+                                <div class="gallery-slider">
+                                    <div class="gallery-slide active">
+                                        <img src="img/BMW 520İ/1.jpg" alt="Sıfır km BMW 520i - 1">
+                                    </div>
+                                    <div class="gallery-slide">
+                                        <img src="img/BMW 520İ/2.jpg" alt="Sıfır km BMW 520i - 2">
+                                    </div>
+                                    <div class="gallery-slide">
+                                        <img src="img/BMW 520İ/3.jpg" alt="Sıfır km BMW 520i - 3">
+                                    </div>
+                                    <div class="gallery-slide">
+                                        <img src="img/BMW 520İ/4.jpg" alt="Sıfır km BMW 520i - 4">
+                                    </div>
+                                    <div class="gallery-slide">
+                                        <img src="img/BMW 520İ/5.jpg" alt="Sıfır km BMW 520i - 5">
+                                    </div>
+                                    <div class="gallery-slide">
+                                        <img src="img/BMW 520İ/6.jpg" alt="Sıfır km BMW 520i - 6">
+                                    </div>
+                                    <div class="gallery-slide">
+                                        <img src="img/BMW 520İ/7.jpg" alt="Sıfır km BMW 520i - 7">
+                                    </div>
+                                    <div class="gallery-slide">
+                                        <img src="img/BMW 520İ/8.jpg" alt="Sıfır km BMW 520i - 8">
+                                    </div>
+                                    <div class="gallery-slide">
+                                        <img src="img/BMW 520İ/9.jpg" alt="Sıfır km BMW 520i - 9">
+                                    </div>
+                                </div>
+                                <div class="gallery-counter">1 / 9</div>
+                                <div class="gallery-controls">
+                                    <button class="gallery-btn prev" type="button" aria-label="Önceki medya"></button>
+                                    <button class="gallery-btn next" type="button" aria-label="Sonraki medya"></button>
+                                </div>
+                            </div>
+
+                            <div class="gallery-content">
+                                <h3>Sıfır km BMW 520i</h3>
+                                <p>Sıfır km BMW 520i, daha ilk bakışta kendine hayran bırakan güçlü ve zamansız bir duruşa sahip. Bu otomobil, GALİNİ'de hem estetik hem de koruma açısından en doğru şekilde hazırlandı. Araç, komple 7 yıl garantili SCHUTZ 200 micron PPF kaplama ile baştan sona koruma altına alındı; böylece boya, günlük kullanımda karşılaşabileceği dış etkenlere karşı maksimum güvenceye kavuştu.</p>
+                                
+                                <p>Bu titiz yaklaşım, iç mekânda da küçük ama önemli bir detayla devam etti. Yeni nesil BMW'nin birleşik kavisli ekranı, en çok temas edilen alanlardan biri olduğu için özel ekran koruyucu ile güvence altına alındı.</p>
+                                
+                                <p>Ve evet… 5 Serisi artık yalnızca konfor odaklı bir sedan değil. Teknoloji, sürüş keyfi ve prestiji aynı çizgide buluşturan güçlü bir karaktere sahip.</p>
+                                
+                                <p>Peki siz yeni kasa BMW 520i'yi nasıl buluyorsunuz? 👀🚘</p>
+
+                                <a href="https://www.instagram.com/galini_detailing" target="_blank" rel="noopener noreferrer" class="gallery-instagram-link">
+                                    <img src="img/instagram.png" alt="Instagram">
+                                    @galini_detailing
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <button class="modal-nav-btn next-modal" type="button" aria-label="Sonraki projeye geç"></button>
+                    </div>
+                    
+                    <!-- Volkswagen Caddy Modal -->
+                    <div class="gallery-modal" id="volkswagen-caddy-modal">
+                        <button class="modal-nav-btn prev-modal" type="button" aria-label="Önceki projeye geç"></button>
+                        <div class="gallery-modal-content">
+                            <button class="gallery-modal-close" type="button" aria-label="Galeriyi kapat">&times;</button>
+                            
+                            <div class="gallery-slider-wrapper">
+                                <div class="gallery-slider">
+                                    <div class="gallery-slide active">
+                                        <img src="img/Volkswagen Caddy/1.jpg" alt="Volkswagen Caddy - 1">
+                                    </div>
+                                    <div class="gallery-slide">
+                                        <img src="img/Volkswagen Caddy/2.jpg" alt="Volkswagen Caddy - 2">
+                                    </div>
+                                    <div class="gallery-slide">
+                                        <img src="img/Volkswagen Caddy/3.jpg" alt="Volkswagen Caddy - 3">
+                                    </div>
+                                    <div class="gallery-slide">
+                                        <img src="img/Volkswagen Caddy/4.jpg" alt="Volkswagen Caddy - 4">
+                                    </div>
+                                    <div class="gallery-slide">
+                                        <img src="img/Volkswagen Caddy/5.jpg" alt="Volkswagen Caddy - 5">
+                                    </div>
+                                    <div class="gallery-slide">
+                                        <img src="img/Volkswagen Caddy/6.jpg" alt="Volkswagen Caddy - 6">
+                                    </div>
+                                    <div class="gallery-slide">
+                                        <video controls playsinline preload="metadata">
+                                            <source src="img/Volkswagen Caddy/7.mp4" type="video/mp4">
+                                            Tarayıcınız video etiketini desteklemiyor.
+                                        </video>
+                                    </div>
+                                    <div class="gallery-slide">
+                                        <img src="img/Volkswagen Caddy/8.jpg" alt="Volkswagen Caddy - 8">
+                                    </div>
+                                    <div class="gallery-slide">
+                                        <video controls playsinline preload="metadata">
+                                            <source src="img/Volkswagen Caddy/9.mp4" type="video/mp4">
+                                            Tarayıcınız video etiketini desteklemiyor.
+                                        </video>
+                                    </div>
+                                    <div class="gallery-slide">
+                                        <img src="img/Volkswagen Caddy/10.jpg" alt="Volkswagen Caddy - 10">
+                                    </div>
+                                    <div class="gallery-slide">
+                                        <img src="img/Volkswagen Caddy/11.jpg" alt="Volkswagen Caddy - 11">
+                                    </div>
+                                    <div class="gallery-slide">
+                                        <img src="img/Volkswagen Caddy/12.jpg" alt="Volkswagen Caddy - 12">
+                                    </div>
+                                    <div class="gallery-slide">
+                                        <img src="img/Volkswagen Caddy/13.jpg" alt="Volkswagen Caddy - 13">
+                                    </div>
+                                </div>
+                                <div class="gallery-counter">1 / 13</div>
+                                <div class="gallery-controls">
+                                    <button class="gallery-btn prev" type="button" aria-label="Önceki medya"></button>
+                                    <button class="gallery-btn next" type="button" aria-label="Sonraki medya"></button>
+                                </div>
+                            </div>
+
+                            <div class="gallery-content">
+                                <h3>Volkswagen Caddy</h3>
+                                <p>Volkswagen Caddy, geniş yaşam alanı, konforu ve modern tasarımıyla artık yalnızca bir araç değil; günlük hayatın vazgeçilmez bir parçası.</p>
+
+                                <p>Bu sıfır kilometre Caddy, GALİNİ’de komple PPF kaplama uygulamasıyla koruma altına alındı. Aracın tüm boya yüzeyi, 7 yıl garantili SCHUTZ 200 micron PPF ile kaplanarak taş izleri, çizikler ve dış etkenlere karşı maksimum koruma sağlandı.</p>
+
+                                <p>Böylece aracın ilk günkü görünümünü uzun yıllar koruması hedeflenirken, boya yüzeyinin değeri de güvence altına alınmış oldu.</p>
+
+                                <p>Ve evet…</p>
+
+                                <p>Volkswagen Caddy artık sadece pratikliğiyle değil, korunan kusursuz görünümüyle de dikkat çekiyor.</p>
+
+                                <p>Peki siz Volkswagen Caddy’nin yeni nesil tasarımını nasıl buluyorsunuz? 👀</p>
+
+                                <a href="https://www.instagram.com/galini_detailing" target="_blank" rel="noopener noreferrer" class="gallery-instagram-link">
+                                    <img src="img/instagram.png" alt="Instagram">
+                                    @galini_detailing
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <button class="modal-nav-btn next-modal" type="button" aria-label="Sonraki projeye geç"></button>
+                    </div>
+
+                    <!-- BMW X1 xDrive25e Modal -->
+                    <div class="gallery-modal" id="bmwx1-modal">
+                        <button class="modal-nav-btn prev-modal" type="button" aria-label="Önceki projeye geç"></button>
+                        <div class="gallery-modal-content">
+                            <button class="gallery-modal-close" type="button" aria-label="Galeriyi kapat">&times;</button>
+                            
+                            <div class="gallery-slider-wrapper">
+                                <div class="gallery-slider">
+                                    <div class="gallery-slide active">
+                                        <img src="img/BMW X1 xDrive25e/1.jpg" alt="Sıfır km BMW X1 xDrive25e - 1">
+                                    </div>
+                                    <div class="gallery-slide">
+                                        <img src="img/BMW X1 xDrive25e/2.jpg" alt="Sıfır km BMW X1 xDrive25e - 2">
+                                    </div>
+                                    <div class="gallery-slide">
+                                        <img src="img/BMW X1 xDrive25e/4.jpg" alt="Sıfır km BMW X1 xDrive25e - 3">
+                                    </div>
+                                    <div class="gallery-slide">
+                                        <img src="img/BMW X1 xDrive25e/5.jpg" alt="Sıfır km BMW X1 xDrive25e - 4">
+                                    </div>
+                                    <div class="gallery-slide">
+                                        <img src="img/BMW X1 xDrive25e/6.jpg" alt="Sıfır km BMW X1 xDrive25e - 5">
+                                    </div>
+                                    <div class="gallery-slide">
+                                        <video controls playsinline preload="metadata">
+                                            <source src="img/BMW X1 xDrive25e/7.mp4" type="video/mp4">
+                                            Tarayıcınız video etiketini desteklemiyor.
+                                        </video>
+                                    </div>
+                                    <div class="gallery-slide">
+                                        <img src="img/BMW X1 xDrive25e/8.jpg" alt="Sıfır km BMW X1 xDrive25e - 7">
+                                    </div>
+                                    <div class="gallery-slide">
+                                        <img src="img/BMW X1 xDrive25e/9.jpg" alt="Sıfır km BMW X1 xDrive25e - 8">
+                                    </div>
+                                    <div class="gallery-slide">
+                                        <img src="img/BMW X1 xDrive25e/10.jpg" alt="Sıfır km BMW X1 xDrive25e - 9">
+                                    </div>
+                                    <div class="gallery-slide">
+                                        <img src="img/BMW X1 xDrive25e/11.jpg" alt="Sıfır km BMW X1 xDrive25e - 10">
+                                    </div>
+                                    <div class="gallery-slide">
+                                        <video controls playsinline preload="metadata">
+                                            <source src="img/BMW X1 xDrive25e/12.mp4" type="video/mp4">
+                                            Tarayıcınız video etiketini desteklemiyor.
+                                        </video>
+                                    </div>
+                                    <div class="gallery-slide">
+                                        <img src="img/BMW X1 xDrive25e/13.jpg" alt="Sıfır km BMW X1 xDrive25e - 12">
+                                    </div>
+                                    <div class="gallery-slide">
+                                        <img src="img/BMW X1 xDrive25e/14.jpg" alt="Sıfır km BMW X1 xDrive25e - 13">
+                                    </div>
+                                    <div class="gallery-slide">
+                                        <video controls playsinline preload="metadata">
+                                            <source src="img/BMW X1 xDrive25e/15.mp4" type="video/mp4">
+                                            Tarayıcınız video etiketini desteklemiyor.
+                                        </video>
+                                    </div>
+                                    <div class="gallery-slide">
+                                        <img src="img/BMW X1 xDrive25e/16.jpg" alt="Sıfır km BMW X1 xDrive25e - 15">
+                                    </div>
+                                </div>
+                                <div class="gallery-counter">1 / 15</div>
+                                <div class="gallery-controls">
+                                    <button class="gallery-btn prev" type="button" aria-label="Önceki medya"></button>
+                                    <button class="gallery-btn next" type="button" aria-label="Sonraki medya"></button>
+                                </div>
+                            </div>
+
+                            <div class="gallery-content">
+                                <h3>Sıfır km BMW X1 xDrive25e</h3>
+                                <p>Sıfır km BMW X1 xDrive25e, ilk bakışta premium karakterini hissettiren güçlü ve modern bir SUV. Dinamik tasarımı, hibrit teknolojisi ve sürüş konforuyla şehir içinde olduğu kadar uzun yolda da farkını ortaya koyuyor.</p>
+                                
+                                <p>Bu özel araç, GALİNİ'de estetik ve koruma açısından en doğru uygulamalarla hazırlandı. Araç, komple 7 yıl garantili SCHUTZ 200 micron PPF kaplama ile baştan sona koruma altına alındı; böylece boya yüzeyi günlük kullanımda oluşabilecek taş izi, çizik ve dış etkenlere karşı maksimum dayanıklılığa kavuştu.</p>
+                                
+                                <p>Her detayında kalite hissi veren BMW X1 xDrive25e, sportif duruşuyla birlikte konfor ve teknolojiyi de kusursuz şekilde bir araya getiriyor. Biz de bu karaktere yakışır şekilde uygulamalarımızı titizlikle tamamladık.</p>
+                                
+                                <p>Ve evet… X1 artık yalnızca kompakt bir SUV değil. Güçlü tasarımı, hibrit performansı ve premium hissiyatıyla bulunduğu her ortamda dikkatleri üzerine çeken özel bir karaktere sahip.</p>
+                                
+                                <p>Peki siz yeni kasa BMW X1 xDrive25e'yi nasıl buluyorsunuz? 👀 #bmw #ppfkaplama #paintprotectıonfılm #i̇şbirliği</p>
+
+                                <a href="https://www.instagram.com/galini_detailing" target="_blank" rel="noopener noreferrer" class="gallery-instagram-link">
+                                    <img src="img/instagram.png" alt="Instagram">
+                                    @galini_detailing
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <button class="modal-nav-btn next-modal" type="button" aria-label="Sonraki projeye geç"></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="section footer-promo-section">
+        <div class="container footer-promo-grid">
+            <article class="promo-box">
+                <h3>Aracınızın Değerini Korumak Mı İstiyorsunuz?</h3>
+                <p>İkinci el veya sıfır bir araç aldınız ve aracınızın değerini kaybetmeden yıllarca ilk günkü gibi kalmasını istiyorsanız PPF kaplama ve seramik kaplamayla size yardımcı olabiliriz.</p>
+            </article>
+            <article class="promo-box">
+                <h3>Arabanızı Zorlanmadan Satmak Mı İstiyorsunuz?</h3>
+                <p>Arabanızı satmaya karar verdiğinizde gelen alıcıların aracınızdan etkilenip hemen almak istemesi için detaylı oto kuaför hizmeti çok önemlidir.</p>
+                <p>Temiz bir araç daha hızlı satılır ve yüksek teklif alma şansını artırır.</p>
+            </article>
+            <article class="promo-box contact-box">
+                <h3>İletişim & Randevu</h3>
+                <p><strong>Telefon:</strong> 0 (552) 398 46 78</p>
+                <p><strong>E-Mail:</strong> info@galini.com</p>
+                <p><strong>Çalışma Saatleri:</strong> 09:00 – 19:00</p>
+                <p><strong>Adres:</strong> 50. Yıl, 15. Cd., 33150 Yenişehir/Mersin</p>
+            </article>
+        </div>
+    </section>
+
+    <a href="https://wa.me/905523984678?text=Merhaba, Galeri hakkında bilgi almak istiyorum" class="whatsapp-btn" data-tooltip="Merhaba! Size nasıl yardımcı olabiliriz?" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp ile iletişime geçin">
+        <img src="img/apple.png" alt="WhatsApp">
+    </a>
+
+    <script src="js/active-link.js"></script>
+    <script src="js/whatsapp-tooltip.js"></script>
+    <script src="js/phone-contact.js"></script>
+    <script src="js/gallery-modal.js"></script>
+</body>
+</html>

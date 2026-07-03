@@ -1,0 +1,1010 @@
+:root {
+    --bg: #0b0c0f;
+    --bg-deep: #07080a;
+    --surface: #111318;
+    --surface-2: #171a20;
+    --surface-3: #0f1115;
+    --line: rgba(255, 255, 255, 0.1);
+    --line-soft: rgba(255, 255, 255, 0.06);
+    --text: #f6f7f9;
+    --muted: #aeb6c2;
+    --muted-2: #7f8794;
+    --accent: #d8b46a;
+    --accent-strong: #f0cf84;
+    --accent-soft: rgba(216, 180, 106, 0.14);
+    --shadow: 0 18px 50px rgba(0, 0, 0, 0.24);
+    --shadow-strong: 0 28px 80px rgba(0, 0, 0, 0.42);
+}
+
+html {
+    scroll-padding-top: 96px;
+}
+
+h1, h2, h3,
+.section-title h2,
+.slide-content h2,
+.price-card-header h1,
+.service-card h3,
+.detail-card h3,
+.about-card h3,
+.summary-card h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
+body {
+    padding-top: 0;
+    background:
+        linear-gradient(180deg, var(--bg-deep) 0%, var(--bg) 42%, #08090b 100%);
+    color: var(--text);
+    font-family: 'Montserrat', Arial, sans-serif;
+    letter-spacing: 0;
+}
+
+main {
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(11, 12, 15, 0.9);
+    border-bottom: 1px solid var(--line-soft);
+    box-shadow: 0 12px 34px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(18px);
+}
+
+.navbar {
+    max-width: 1180px;
+    min-height: 84px;
+    padding: 10px 24px;
+    gap: 18px;
+}
+
+.logo a {
+    gap: 10px;
+}
+
+.logo-icon {
+    display: block;
+    width: auto;
+    height: 44px;
+    max-width: 150px;
+    object-fit: contain;
+}
+
+.logo,
+.logo a {
+    height: 44px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+    overflow: visible;
+}
+
+.logo a {
+    overflow: visible;
+}
+
+header .logo-icon {
+    width: auto;
+    height: 44px;
+    max-width: 154px;
+    transform: none;
+    transform-origin: left center;
+}
+
+nav {
+    margin-left: auto;
+}
+
+.nav-links {
+    gap: 4px;
+}
+
+nav a {
+    color: #dfe3ea;
+    font-size: 0.88rem;
+    font-weight: 600;
+    padding: 9px 11px;
+    border-radius: 8px;
+    white-space: nowrap;
+    transition: color 0.2s ease, background 0.2s ease;
+}
+
+nav a::after {
+    display: none;
+}
+
+nav a:hover,
+nav a:focus,
+nav a.active {
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.08);
+    transform: none;
+}
+
+nav a.active {
+    box-shadow: inset 0 0 0 1px rgba(216, 180, 106, 0.3);
+}
+
+.dropdown-menu {
+    min-width: 250px;
+    margin-top: 12px;
+    padding: 8px;
+    background: rgba(17, 19, 24, 0.98);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.dropdown-menu li a {
+    border-radius: 6px;
+    color: #dfe3ea;
+}
+
+.dropdown-menu li a:hover,
+.dropdown-menu li a.active {
+    color: var(--text);
+    background: var(--accent-soft);
+    padding-left: 20px;
+}
+
+.instagram-link {
+    flex-direction: row;
+    gap: 8px;
+    min-height: 40px;
+    padding: 8px 12px;
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--line-soft);
+    border-radius: 8px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.instagram-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(216, 180, 106, 0.35);
+}
+
+.instagram-link img {
+    width: 18px;
+    height: 18px;
+}
+
+button,
+.btn,
+.btn.cta,
+.map-btn,
+.review-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 12px 28px;
+    color: var(--text);
+    background: rgba(17, 19, 24, 0.72);
+    border: 1px solid rgba(216, 180, 106, 0.48);
+    border-radius: 8px;
+    box-shadow: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.btn:hover,
+.btn.cta:hover,
+.map-btn:hover,
+.review-cta:hover {
+    color: #0b0c0f;
+    background: var(--accent-strong);
+    border-color: var(--accent-strong);
+    box-shadow: none;
+    transform: none;
+}
+
+.btn-secondary {
+    color: var(--muted);
+    background: transparent;
+    border-color: var(--line);
+}
+
+.btn-secondary:hover {
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--accent);
+}
+
+.section {
+    padding: 84px 24px;
+    scroll-margin-top: 100px;
+}
+
+main > .section:not(.hero):not(.footer-promo-section) {
+    position: relative;
+    border-top: 1px solid rgba(255, 255, 255, 0.035);
+}
+
+.container {
+    max-width: 1160px;
+}
+
+.section-title {
+    max-width: 760px;
+    margin: 0 auto 36px;
+    text-align: center;
+}
+
+.section-title p {
+    line-height: 1.75;
+}
+
+.section-title h2::after {
+    content: '';
+    display: block;
+    width: 56px;
+    height: 1px;
+    margin: 18px auto 0;
+    background: var(--accent);
+}
+
+.section-title h2,
+.price-card-header h1 {
+    color: var(--text);
+    background: none;
+    -webkit-text-fill-color: currentColor;
+    font-size: clamp(2rem, 3.2vw, 3.1rem);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: 0;
+}
+
+.section-title p,
+.hero p,
+.slide-content p,
+.about-grid p,
+.about-text,
+.detail-card p,
+.ppf-intro p,
+.summary-card p,
+.feature-list li,
+.summary-list li,
+.contact-card p,
+.promo-box p,
+.contact-box p,
+.footer-column p,
+.footer-column a,
+.footer-links a,
+.before-after-message,
+.price-card-body p {
+    color: var(--muted);
+}
+
+.about-section,
+.services-section,
+.contact-section,
+.service-details-section,
+.ppf-overview-section,
+.google-reviews-section,
+.map-section,
+.before-after-page,
+.about-page,
+.price-card-section {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+}
+
+.services-grid,
+.service-details,
+.about-grid,
+.footer-promo-grid {
+    gap: 18px;
+}
+
+.service-card,
+.detail-card,
+.about-card,
+.feature-box,
+.comparison-box,
+.cta-box,
+.summary-card,
+.contact-card,
+.map-card,
+.before-after-message,
+.price-card,
+.reviews-sidecard,
+.reviews-carousel-wrapper,
+.review-card {
+    position: relative;
+    overflow: hidden;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.035) 0%, rgba(255, 255, 255, 0) 42%),
+        var(--surface);
+    border: 1px solid var(--line-soft);
+    border-radius: 8px;
+    box-shadow: none;
+}
+
+.service-card,
+.detail-card,
+.about-card,
+.feature-box,
+.comparison-box,
+.cta-box,
+.summary-card,
+.contact-card,
+.before-after-message {
+    padding: 28px;
+}
+
+.service-card::before,
+.detail-card::before,
+.about-card::before,
+.feature-box::before,
+.comparison-box::before,
+.cta-box::before,
+.summary-card::before,
+.contact-card::before,
+.price-card::before,
+.reviews-sidecard::before,
+.reviews-carousel-wrapper::before,
+.review-card::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 auto;
+    height: 1px;
+    display: block;
+    background: linear-gradient(90deg, rgba(216, 180, 106, 0), rgba(216, 180, 106, 0.54), rgba(216, 180, 106, 0));
+    opacity: 0.64;
+    pointer-events: none;
+}
+
+.service-card:hover,
+.detail-card:hover,
+.about-card:hover,
+.review-card:hover,
+.reviews-sidecard:hover,
+.contact-card:hover,
+.feature-box:hover,
+.comparison-box:hover,
+.summary-card:hover {
+    border-color: rgba(216, 180, 106, 0.32);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+    transform: translateY(-2px);
+}
+
+.service-card h3,
+.detail-card h3,
+.about-card h3,
+.feature-box h4,
+.comparison-box h4,
+.cta-box h4,
+.summary-card h3,
+.promo-box h3,
+.contact-box h3,
+.footer-column h3,
+.review-brand h3,
+.review-author strong {
+    color: var(--text);
+    letter-spacing: 0;
+}
+
+.service-card h3,
+.detail-card h3,
+.about-card h3,
+.feature-box h4,
+.comparison-box h4,
+.cta-box h4,
+.summary-card h3 {
+    margin-bottom: 14px;
+}
+
+.service-card p,
+.detail-card p,
+.about-card p,
+.feature-box p,
+.comparison-box p,
+.cta-box p,
+.summary-card p {
+    line-height: 1.75;
+}
+
+.hero.slider {
+    padding: 0;
+}
+
+.slider-wrapper {
+    height: min(760px, calc(100vh - 84px));
+    min-height: 520px;
+    background: #07080a;
+}
+
+.slides {
+    height: 100%;
+    min-height: 100%;
+}
+
+.slide {
+    background: #07080a;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    object-fit: cover;
+}
+
+.overlay {
+    background:
+        linear-gradient(90deg, rgba(5, 6, 8, 0.86) 0%, rgba(5, 6, 8, 0.44) 48%, rgba(5, 6, 8, 0.66) 100%),
+        linear-gradient(180deg, rgba(5, 6, 8, 0.08) 0%, rgba(5, 6, 8, 0.64) 100%);
+}
+
+.slide-content {
+    top: 50%;
+    bottom: auto;
+    left: max(24px, calc((100vw - 1160px) / 2 + 24px));
+    width: min(560px, calc(100% - 48px));
+    max-width: 560px;
+    padding: 0;
+    text-align: left;
+    transform: translateY(-50%);
+}
+
+.slide-content h2 {
+    margin-bottom: 16px;
+    color: var(--text);
+    font-size: clamp(2.3rem, 5vw, 5rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 0;
+}
+
+.slide-content p {
+    max-width: 520px;
+    margin-bottom: 26px;
+    font-size: clamp(1rem, 1.5vw, 1.18rem);
+}
+
+.slider-nav {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 8px;
+    box-shadow: none;
+}
+
+.slider-nav:hover {
+    background: rgba(216, 180, 106, 0.18);
+    border-color: rgba(216, 180, 106, 0.46);
+}
+
+.slider-nav.prev {
+    left: 24px;
+}
+
+.slider-nav.next {
+    right: 24px;
+}
+
+.indicators {
+    bottom: 24px;
+}
+
+.indicator {
+    width: 28px;
+    height: 3px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.42);
+}
+
+.indicator.active {
+    background: var(--accent);
+    transform: none;
+}
+
+.google-reviews-card {
+    padding: 34px;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.035) 0%, rgba(255, 255, 255, 0) 34%),
+        var(--surface);
+    border: 1px solid var(--line-soft);
+    border-radius: 8px;
+    box-shadow: none;
+}
+
+.google-reviews-header {
+    margin-bottom: 28px;
+    padding: 0;
+    color: var(--accent);
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+}
+
+.reviews-sidecard,
+.reviews-carousel-wrapper,
+.review-card {
+    background: var(--surface-2);
+}
+
+.review-brand {
+    border-bottom-color: var(--line-soft);
+}
+
+.review-brand p,
+.review-date,
+.review-score p,
+.review-text,
+.carousel-title {
+    color: var(--muted);
+}
+
+.star,
+.review-more {
+    color: var(--accent);
+    text-shadow: none;
+}
+
+.review-avatar {
+    background: var(--accent);
+    border-color: rgba(255, 255, 255, 0.16);
+    box-shadow: none;
+}
+
+.review-arrow {
+    color: var(--text);
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+}
+
+.review-arrow:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(216, 180, 106, 0.35);
+    box-shadow: none;
+    transform: none;
+}
+
+.map-card {
+    padding: 20px;
+}
+
+.map-wrapper {
+    background: #090a0d;
+    border-radius: 8px;
+    border: 1px solid var(--line-soft);
+    box-shadow: none;
+}
+
+.map-wrapper::after {
+    display: none;
+}
+
+.map-wrapper iframe {
+    min-height: 380px;
+}
+
+.map-actions {
+    justify-content: flex-start;
+}
+
+.price-card {
+    max-width: 840px;
+    overflow: hidden;
+}
+
+.price-card-header {
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.035) 0%, rgba(255, 255, 255, 0) 100%),
+        var(--surface-2);
+    border-bottom: 1px solid var(--line-soft);
+}
+
+.price-card-body hr {
+    background: var(--line-soft);
+}
+
+.price-card-note,
+.comparison-box blockquote {
+    color: var(--text);
+    background: var(--accent-soft);
+    border: 1px solid rgba(216, 180, 106, 0.24);
+    border-left: 3px solid var(--accent);
+    border-radius: 8px;
+}
+
+.feature-list li::before,
+.summary-list li::before {
+    color: var(--accent);
+}
+
+.footer-promo-section {
+    margin-top: 0;
+    padding: 58px 24px 34px;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.025) 0%, rgba(255, 255, 255, 0) 42%),
+        var(--surface-3);
+    border-top: 1px solid var(--line-soft);
+}
+
+.promo-box,
+.contact-box {
+    padding: 0;
+    background: transparent;
+    border: 0;
+}
+
+.footer-section {
+    padding: 64px 24px 34px;
+    background: #08090b;
+    border-top: 1px solid var(--line-soft);
+}
+
+.footer-logo .logo-icon {
+    height: 72px;
+}
+
+.footer-bottom {
+    border-top-color: var(--line-soft);
+    color: var(--muted-2);
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+}
+
+.whatsapp-btn {
+    right: 24px;
+    left: auto;
+    bottom: 24px;
+    border-radius: 999px;
+    filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.32));
+}
+
+.whatsapp-btn::after {
+    right: 0;
+    left: auto;
+    bottom: 64px;
+    transform: none;
+    color: var(--text);
+    background: rgba(17, 19, 24, 0.98);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    opacity: 0;
+}
+
+.whatsapp-btn:hover::after {
+    opacity: 1;
+}
+
+.whatsapp-btn.tooltip-active::after {
+    opacity: 1;
+}
+
+/* Sitewide premium refresh */
+.service-actions {
+    justify-content: center;
+}
+
+.ppf-grid {
+    gap: 22px;
+}
+
+.ppf-intro {
+    padding: 0 2px;
+}
+
+.ppf-intro h3,
+.about-text p:first-child {
+    color: var(--text);
+}
+
+.about-text {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.035) 0%, rgba(255, 255, 255, 0) 42%),
+        var(--surface);
+    border: 1px solid var(--line-soft);
+    border-radius: 8px;
+}
+
+.video-card {
+    overflow: hidden;
+    border: 1px solid var(--line-soft) !important;
+    border-radius: 8px !important;
+    background: var(--surface) !important;
+    box-shadow: none !important;
+}
+
+.video-card:hover {
+    border-color: rgba(216, 180, 106, 0.32) !important;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18) !important;
+    transform: translateY(-2px) !important;
+}
+
+.video-header {
+    padding: 26px 28px !important;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.035) 0%, rgba(255, 255, 255, 0) 100%),
+        var(--surface-2) !important;
+    border-bottom: 1px solid var(--line-soft);
+}
+
+.video-header h3 {
+    margin: 0 0 8px !important;
+    color: var(--text) !important;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(1.45rem, 2.5vw, 2rem) !important;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.video-header p {
+    color: var(--muted) !important;
+}
+
+.video-wrapper {
+    min-height: 0 !important;
+    background: #030405 !important;
+    border-radius: 0 !important;
+}
+
+.video-wrapper::after,
+.video-overlay {
+    display: none;
+}
+
+.ppf-video-player,
+.detail-video-player,
+.location-video {
+    width: 100%;
+    min-height: 420px;
+    max-height: 560px;
+    display: block;
+    object-fit: contain;
+    background: #030405;
+}
+
+.contact-card {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 22px;
+}
+
+.contact-card > p {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.map-section .map-card,
+.contact-card .map-card {
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.035) 0%, rgba(255, 255, 255, 0) 38%),
+        var(--surface);
+    border-radius: 8px;
+    border-color: var(--line-soft);
+}
+
+.price-card {
+    border-radius: 8px;
+}
+
+.price-card-body {
+    background: var(--surface);
+}
+
+.price-card-note {
+    border-radius: 8px;
+}
+
+.whatsapp-cta img {
+    border: 1px solid var(--line-soft);
+    border-radius: 8px;
+}
+
+@media (max-width: 980px) {
+    .navbar {
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    nav {
+        order: 3;
+        width: 100%;
+        margin-left: 0;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .nav-links {
+        width: max-content;
+        min-width: 100%;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        padding-bottom: 6px;
+    }
+
+    .dropdown-menu {
+        position: fixed;
+        left: 24px;
+        right: 24px;
+        width: auto;
+    }
+
+    .services-grid,
+    .service-details,
+    .about-grid,
+    .reviews-grid,
+    .ppf-grid,
+    .footer-inner,
+    .footer-promo-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 720px) {
+    .section {
+        padding: 64px 18px;
+    }
+
+    .navbar {
+        padding: 10px 16px;
+    }
+
+    .logo,
+    .logo a {
+        height: 38px;
+    }
+
+    header .logo-icon {
+        height: 38px;
+        max-width: 132px;
+    }
+
+    .instagram-link span {
+        display: none;
+    }
+
+    .slider-wrapper {
+        height: 68vh;
+        min-height: 480px;
+    }
+
+    .slides {
+        height: 100%;
+        min-height: 100%;
+    }
+
+    .slide-content {
+        left: 18px;
+        width: calc(100% - 36px);
+    }
+
+    .slide-content h2 {
+        font-size: clamp(2rem, 10vw, 3.4rem);
+    }
+
+    .slider-nav {
+        top: 50%;
+        bottom: auto;
+        transform: translateY(-50%);
+    }
+
+    .slider-nav.prev {
+        left: 18px;
+    }
+
+    .slider-nav.next {
+        right: 18px;
+    }
+
+    .indicators {
+        bottom: 38px;
+    }
+
+    .google-reviews-card,
+    .reviews-sidecard,
+    .reviews-carousel-wrapper,
+    .service-card,
+    .detail-card,
+    .about-card,
+    .feature-box,
+    .comparison-box,
+    .cta-box,
+    .summary-card,
+    .contact-card,
+    .before-after-message {
+        padding: 22px;
+    }
+
+    .map-wrapper iframe {
+        min-height: 300px;
+    }
+
+    .whatsapp-btn {
+        right: 18px;
+        bottom: 18px;
+    }
+}
+
+@media (max-width: 720px) {
+    .video-header {
+        padding: 20px !important;
+    }
+
+    .video-header h3 {
+        font-size: clamp(1.25rem, 7vw, 1.65rem) !important;
+    }
+
+    .ppf-video-player,
+    .detail-video-player,
+    .location-video {
+        min-height: 280px;
+        max-height: 360px;
+    }
+
+    .contact-card,
+    .about-text {
+        padding: 22px;
+    }
+
+    .price-card-section {
+        padding: 64px 18px;
+    }
+
+    .price-card {
+        width: 100%;
+    }
+
+    .whatsapp-btn::after {
+        display: block;
+        right: 0;
+        left: auto;
+        bottom: 58px;
+        width: max-content;
+        max-width: min(280px, calc(100vw - 36px));
+        white-space: normal;
+        text-align: left;
+        line-height: 1.45;
+        font-size: 0.8rem;
+        padding: 10px 12px;
+        opacity: 0;
+        transform: none;
+    }
+
+    .whatsapp-btn.tooltip-active::after,
+    .whatsapp-btn:hover::after {
+        opacity: 1;
+    }
+}

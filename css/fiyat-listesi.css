@@ -1,0 +1,329 @@
+/* Fiyat Listesi sayfası özel stilleri */
+
+section.price-card-section {
+    padding: 96px 24px 84px;
+}
+
+.price-hero,
+.price-note-panel,
+.price-service-card,
+.price-factor-card,
+.price-cta-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 8px;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.035) 0%, rgba(255, 255, 255, 0) 42%),
+        #111318;
+}
+
+.price-hero::before,
+.price-note-panel::before,
+.price-service-card::before,
+.price-factor-card::before,
+.price-cta-card::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 auto;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(216, 180, 106, 0), rgba(216, 180, 106, 0.54), rgba(216, 180, 106, 0));
+    pointer-events: none;
+}
+
+.price-hero {
+    min-height: 430px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 18px;
+    padding: 42px;
+}
+
+.price-eyebrow,
+.price-tag {
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
+    min-height: 32px;
+    padding: 8px 11px;
+    border: 1px solid rgba(216, 180, 106, 0.42);
+    border-radius: 999px;
+    background: rgba(216, 180, 106, 0.12);
+    color: #f0cf84;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.price-hero h1 {
+    max-width: 880px;
+    margin: 18px 0;
+    color: #f6f7f9;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(2.35rem, 4.7vw, 4.8rem);
+    font-weight: 800;
+    line-height: 0.96;
+    letter-spacing: 0;
+}
+
+.price-hero p,
+.price-note-panel,
+.price-service-card p,
+.price-service-card li,
+.price-feature-list li,
+.price-factor-card p,
+.price-cta-card p {
+    color: #aeb6c2;
+    line-height: 1.72;
+}
+
+.price-hero p {
+    max-width: 760px;
+    font-size: 1.03rem;
+}
+
+.price-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.price-note-panel {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 18px;
+    padding: 18px 20px;
+}
+
+.price-note-panel strong {
+    flex: 0 0 auto;
+    color: #f6f7f9;
+}
+
+.price-services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.price-service-card {
+    min-height: 390px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 28px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.price-service-card:hover {
+    border-color: rgba(216, 180, 106, 0.34);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+    transform: translateY(-2px);
+}
+
+.price-service-card.featured,
+.price-service-card.restoration {
+    background:
+        linear-gradient(180deg, rgba(216, 180, 106, 0.09) 0%, rgba(216, 180, 106, 0) 44%),
+        #111318;
+    border-color: rgba(216, 180, 106, 0.22);
+}
+
+.price-service-card h2 {
+    margin: 18px 0 12px;
+    color: #f6f7f9;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(1.45rem, 2vw, 2rem);
+    font-weight: 800;
+    line-height: 1.08;
+}
+
+.price-service-card p {
+    margin: 0 0 18px;
+}
+
+.price-service-card ul,
+.price-feature-list {
+    list-style: none;
+    display: grid;
+    gap: 10px;
+    margin: 0 0 22px;
+    padding: 0;
+}
+
+.price-service-card li,
+.price-feature-list li {
+    position: relative;
+    padding-left: 18px;
+    font-size: 0.92rem;
+}
+
+.price-service-card li::before,
+.price-feature-list li::before {
+    content: '';
+    position: absolute;
+    top: 0.78em;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background: #d8b46a;
+}
+
+.price-service-card a {
+    margin-top: auto;
+    color: #f0cf84;
+    font-size: 0.86rem;
+    font-weight: 800;
+    line-height: 1.45;
+}
+
+.price-service-card a:hover {
+    color: #ffffff;
+}
+
+.price-detail-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.34fr) minmax(320px, 0.66fr);
+    gap: 18px;
+    margin-top: 22px;
+}
+
+.price-detail-grid > .price-card {
+    max-width: none;
+    margin: 0;
+    border-radius: 8px;
+}
+
+.price-card-header {
+    padding: 28px;
+    text-align: left;
+}
+
+.price-card-header h2 {
+    margin: 16px 0 0;
+    color: #f6f7f9;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(1.85rem, 3vw, 3rem);
+    font-weight: 800;
+    line-height: 1.05;
+}
+
+.price-card-body {
+    padding: 28px;
+}
+
+.price-feature-list {
+    gap: 14px;
+    margin-bottom: 0;
+}
+
+.price-feature-list li {
+    color: #dfe3ea;
+    font-size: 0.96rem;
+}
+
+.price-aside {
+    display: grid;
+    gap: 18px;
+}
+
+.price-factor-card,
+.price-cta-card {
+    padding: 28px;
+}
+
+.price-factor-card h3,
+.price-cta-card h3 {
+    margin: 0 0 18px;
+    color: #f6f7f9;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.55rem;
+    line-height: 1.12;
+}
+
+.price-factor-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.price-factor-list span {
+    display: inline-flex;
+    min-height: 34px;
+    align-items: center;
+    padding: 8px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.035);
+    color: #dfe3ea;
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.price-cta-card p {
+    margin: 0 0 20px;
+}
+
+.whatsapp-cta {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.whatsapp-cta img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+@media (max-width: 1020px) {
+    .price-services-grid,
+    .price-detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .price-service-card {
+        min-height: 0;
+    }
+}
+
+@media (max-width: 680px) {
+    section.price-card-section {
+        padding: 64px 18px;
+    }
+
+    .price-hero {
+        min-height: 510px;
+        padding: 22px;
+    }
+
+    .price-hero h1 {
+        font-size: clamp(2rem, 12vw, 3rem);
+    }
+
+    .price-hero-actions .btn,
+    .price-cta-card .btn {
+        width: 100%;
+    }
+
+    .price-note-panel {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 18px;
+    }
+
+    .price-service-card,
+    .price-card-header,
+    .price-card-body,
+    .price-factor-card,
+    .price-cta-card {
+        padding: 22px;
+    }
+}
