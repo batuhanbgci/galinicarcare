@@ -20,7 +20,12 @@
                     <img src="img/icon.png" alt="GALİNİ Logo" class="logo-icon">
                 </a>
             </div>
-            <nav>
+            <button class="mobile-menu-toggle" type="button" aria-label="Menüyü aç" aria-expanded="false" aria-controls="primary-navigation">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </button>
+            <nav id="primary-navigation">
                 <ul class="nav-links">
                     <li><a href="index.html">Anasayfa</a></li>
                     <li class="dropdown">
@@ -195,7 +200,8 @@
                                         <img src="img/Volkswagen Caddy/6.jpg" alt="Volkswagen Caddy - 6">
                                     </div>
                                     <div class="gallery-slide">
-                                        <video controls playsinline preload="metadata">
+                                        <video controls playsinline webkit-playsinline x5-playsinline preload="metadata" poster="img/Volkswagen Caddy/6.jpg">
+                                            <source src="img/Volkswagen Caddy/7-mobile.mp4" type="video/mp4" media="(max-width: 760px)">
                                             <source src="img/Volkswagen Caddy/7.mp4" type="video/mp4">
                                             Tarayıcınız video etiketini desteklemiyor.
                                         </video>
@@ -204,7 +210,8 @@
                                         <img src="img/Volkswagen Caddy/8.jpg" alt="Volkswagen Caddy - 8">
                                     </div>
                                     <div class="gallery-slide">
-                                        <video controls playsinline preload="metadata">
+                                        <video controls playsinline webkit-playsinline x5-playsinline preload="metadata" poster="img/Volkswagen Caddy/8.jpg">
+                                            <source src="img/Volkswagen Caddy/9-mobile.mp4" type="video/mp4" media="(max-width: 760px)">
                                             <source src="img/Volkswagen Caddy/9.mp4" type="video/mp4">
                                             Tarayıcınız video etiketini desteklemiyor.
                                         </video>
@@ -277,7 +284,8 @@
                                         <img src="img/BMW X1 xDrive25e/6.jpg" alt="Sıfır km BMW X1 xDrive25e - 5">
                                     </div>
                                     <div class="gallery-slide">
-                                        <video controls playsinline preload="metadata">
+                                        <video controls playsinline webkit-playsinline x5-playsinline preload="metadata" poster="img/BMW X1 xDrive25e/6.jpg">
+                                            <source src="img/BMW X1 xDrive25e/7-mobile.mp4" type="video/mp4" media="(max-width: 760px)">
                                             <source src="img/BMW X1 xDrive25e/7.mp4" type="video/mp4">
                                             Tarayıcınız video etiketini desteklemiyor.
                                         </video>
@@ -295,7 +303,8 @@
                                         <img src="img/BMW X1 xDrive25e/11.jpg" alt="Sıfır km BMW X1 xDrive25e - 10">
                                     </div>
                                     <div class="gallery-slide">
-                                        <video controls playsinline preload="metadata">
+                                        <video controls playsinline webkit-playsinline x5-playsinline preload="metadata" poster="img/BMW X1 xDrive25e/11.jpg">
+                                            <source src="img/BMW X1 xDrive25e/12-mobile.mp4" type="video/mp4" media="(max-width: 760px)">
                                             <source src="img/BMW X1 xDrive25e/12.mp4" type="video/mp4">
                                             Tarayıcınız video etiketini desteklemiyor.
                                         </video>
@@ -307,7 +316,8 @@
                                         <img src="img/BMW X1 xDrive25e/14.jpg" alt="Sıfır km BMW X1 xDrive25e - 13">
                                     </div>
                                     <div class="gallery-slide">
-                                        <video controls playsinline preload="metadata">
+                                        <video controls playsinline webkit-playsinline x5-playsinline preload="metadata" poster="img/BMW X1 xDrive25e/14.jpg">
+                                            <source src="img/BMW X1 xDrive25e/15-mobile.mp4" type="video/mp4" media="(max-width: 760px)">
                                             <source src="img/BMW X1 xDrive25e/15.mp4" type="video/mp4">
                                             Tarayıcınız video etiketini desteklemiyor.
                                         </video>
@@ -365,7 +375,7 @@
                 <p><strong>Telefon:</strong> 0 (552) 398 46 78</p>
                 <p><strong>E-Mail:</strong> info@galini.com</p>
                 <p><strong>Çalışma Saatleri:</strong> 09:00 – 19:00</p>
-                <p><strong>Adres:</strong> 50. Yıl, 15. Cd., 33150 Yenişehir/Mersin</p>
+                <p><strong>Adres:</strong> QHX5+4X Yenişehir, Mersin</p>
             </article>
         </div>
     </section>
@@ -374,6 +384,7 @@
         <img src="img/apple.png" alt="WhatsApp">
     </a>
 
+    <script src="js/mobile-menu.js"></script>
     <script src="js/active-link.js"></script>
     <script src="js/whatsapp-tooltip.js"></script>
     <script src="js/phone-contact.js"></script>

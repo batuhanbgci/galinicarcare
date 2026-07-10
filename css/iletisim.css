@@ -542,4 +542,63 @@ footer {
     display: block;
 }
 
- 
+.contact-card .contact-video {
+    width: 100%;
+    overflow: visible;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.contact-card > p {
+    margin-bottom: 0;
+}
+
+.contact-card .contact-video .video-header {
+    padding: 0 0 18px !important;
+    background: transparent !important;
+    border-bottom: 0;
+}
+
+.contact-card .contact-video .video-header h3 {
+    margin: 0 !important;
+    color: #ffffff !important;
+    font-size: clamp(1.2rem, 2.4vw, 1.65rem) !important;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.contact-card .contact-video .video-wrapper {
+    display: block;
+    width: 100%;
+    min-height: 0 !important;
+    overflow: visible;
+    background: #030405 !important;
+    border-radius: 8px !important;
+}
+
+.contact-card .contact-video .location-video {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    display: block;
+    object-fit: contain;
+    background: #030405;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .contact-card {
+        align-items: stretch;
+    }
+
+    .contact-card .contact-video .video-header {
+        padding-bottom: 14px !important;
+    }
+
+    .contact-card .contact-video .video-header h3 {
+        font-size: clamp(1rem, 5.2vw, 1.22rem) !important;
+    }
+}

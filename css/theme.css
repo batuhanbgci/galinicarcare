@@ -61,6 +61,7 @@ header {
 }
 
 .navbar {
+    position: relative;
     max-width: 1180px;
     min-height: 84px;
     padding: 10px 24px;
@@ -135,6 +136,36 @@ nav a.active {
 
 nav a.active {
     box-shadow: inset 0 0 0 1px rgba(216, 180, 106, 0.3);
+}
+
+.mobile-menu-toggle {
+    display: none;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+    padding: 0;
+    border-radius: 8px;
+    border: 1px solid var(--line-soft);
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: none;
+    cursor: pointer;
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    margin: 3px 0;
+    border-radius: 999px;
+    background: var(--text);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.mobile-menu-toggle:hover,
+.mobile-menu-toggle:focus {
+    background: rgba(216, 180, 106, 0.18);
+    border-color: rgba(216, 180, 106, 0.46);
 }
 
 .dropdown-menu {
@@ -428,8 +459,9 @@ main > .section:not(.hero):not(.footer-promo-section) {
 }
 
 .slider-wrapper {
-    height: min(760px, calc(100vh - 84px));
-    min-height: 520px;
+    height: calc(100vh - 84px);
+    height: calc(100svh - 84px);
+    min-height: 560px;
     background: #07080a;
 }
 
@@ -442,7 +474,8 @@ main > .section:not(.hero):not(.footer-promo-section) {
     background: #07080a;
 }
 
-.slide img {
+.slide img,
+.slide video {
     width: 100%;
     height: 100%;
     max-width: none;
@@ -511,10 +544,17 @@ main > .section:not(.hero):not(.footer-promo-section) {
 }
 
 .indicator {
-    width: 28px;
-    height: 3px;
+    width: 18px;
+    height: 2px;
+    min-width: 0;
+    min-height: 0;
+    padding: 0;
+    border: 0;
     border-radius: 999px;
     background: rgba(255, 255, 255, 0.42);
+    box-shadow: none;
+    appearance: none;
+    cursor: pointer;
 }
 
 .indicator.active {
@@ -832,15 +872,53 @@ main > .section:not(.hero):not(.footer-promo-section) {
 @media (max-width: 980px) {
     .navbar {
         align-items: center;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
+    }
+
+    .mobile-menu-toggle {
+        order: 2;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-left: auto;
+    }
+
+    .navbar.nav-open .mobile-menu-toggle span:nth-child(1) {
+        transform: translateY(5px) rotate(45deg);
+    }
+
+    .navbar.nav-open .mobile-menu-toggle span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .navbar.nav-open .mobile-menu-toggle span:nth-child(3) {
+        transform: translateY(-5px) rotate(-45deg);
     }
 
     nav {
-        order: 3;
-        width: 100%;
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 24px;
+        right: 24px;
+        order: 4;
+        display: none;
+        width: auto;
+        max-height: calc(100vh - 116px);
+        max-height: calc(100svh - 116px);
         margin-left: 0;
-        overflow-x: auto;
+        padding: 8px;
+        overflow-y: auto;
+        background: rgba(17, 19, 24, 0.98);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        box-shadow: var(--shadow);
         scrollbar-width: none;
+        z-index: 120;
+    }
+
+    .navbar.nav-open nav {
+        display: block;
     }
 
     nav::-webkit-scrollbar {
@@ -848,18 +926,52 @@ main > .section:not(.hero):not(.footer-promo-section) {
     }
 
     .nav-links {
-        width: max-content;
-        min-width: 100%;
-        flex-wrap: nowrap;
+        width: 100%;
+        min-width: 0;
+        flex-direction: column;
+        align-items: stretch;
         justify-content: flex-start;
-        padding-bottom: 6px;
+        gap: 4px;
+        padding-bottom: 0;
+    }
+
+    .nav-links > li {
+        width: 100%;
+    }
+
+    nav a {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        padding: 10px 12px;
     }
 
     .dropdown-menu {
-        position: fixed;
-        left: 24px;
-        right: 24px;
-        width: auto;
+        position: static;
+        width: 100%;
+        min-width: 0;
+        margin: 4px 0 0;
+        padding: 4px;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        background: rgba(255, 255, 255, 0.04);
+        border-color: var(--line-soft);
+        box-shadow: none;
+    }
+
+    .dropdown-menu li a {
+        padding: 9px 12px;
+        font-size: 0.82rem;
+    }
+
+    .instagram-link {
+        order: 3;
+        margin-left: 0;
+    }
+
+    .instagram-link span {
+        display: none;
     }
 
     .services-grid,
@@ -897,8 +1009,9 @@ main > .section:not(.hero):not(.footer-promo-section) {
     }
 
     .slider-wrapper {
-        height: 68vh;
-        min-height: 480px;
+        height: calc(100vh - 94px);
+        height: calc(100svh - 94px);
+        min-height: 520px;
     }
 
     .slides {
@@ -915,22 +1028,47 @@ main > .section:not(.hero):not(.footer-promo-section) {
         font-size: clamp(2rem, 10vw, 3.4rem);
     }
 
+    .slide-content .btn.cta,
+    .video-slide .slide-content .btn.cta {
+        min-height: 42px;
+        padding: 10px 20px;
+        font-size: 0.74rem;
+    }
+
     .slider-nav {
         top: 50%;
         bottom: auto;
+        width: 38px;
+        height: 38px;
+        min-width: 38px;
+        min-height: 38px;
+        padding: 0;
+        font-size: 1rem;
         transform: translateY(-50%);
     }
 
+    .slider-nav::before {
+        content: '';
+        position: absolute;
+        inset: -4px;
+    }
+
     .slider-nav.prev {
-        left: 18px;
+        left: 12px;
     }
 
     .slider-nav.next {
-        right: 18px;
+        right: 12px;
     }
 
     .indicators {
-        bottom: 38px;
+        bottom: 30px;
+        gap: 7px;
+    }
+
+    .indicator {
+        width: 16px;
+        height: 2px;
     }
 
     .google-reviews-card,
@@ -1006,5 +1144,375 @@ main > .section:not(.hero):not(.footer-promo-section) {
     .whatsapp-btn.tooltip-active::after,
     .whatsapp-btn:hover::after {
         opacity: 1;
+    }
+}
+
+@media (max-width: 420px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .navbar {
+        min-height: 0;
+        padding: 8px 10px;
+        gap: 8px;
+    }
+
+    .logo,
+    .logo a {
+        height: 34px;
+    }
+
+    header .logo-icon {
+        height: 34px;
+        max-width: 118px;
+    }
+
+    .instagram-link {
+        width: 34px;
+        min-height: 34px;
+        padding: 7px;
+        border-radius: 7px;
+    }
+
+    .instagram-link img {
+        width: 16px;
+        height: 16px;
+    }
+
+    .nav-links {
+        gap: 3px;
+        padding-bottom: 4px;
+    }
+
+    nav a {
+        padding: 7px 8px;
+        border-radius: 7px;
+        font-size: 0.72rem;
+    }
+
+    .dropdown-menu {
+        margin-top: 6px;
+        max-height: none;
+        overflow: visible;
+    }
+
+    .section {
+        padding: 48px 14px;
+    }
+
+    .section-title {
+        margin-bottom: 24px;
+    }
+
+    .section-title h2 {
+        font-size: clamp(1.65rem, 8vw, 2.15rem);
+        line-height: 1.12;
+    }
+
+    .section-title p,
+    .service-card p,
+    .review-text,
+    .contact-card p,
+    .promo-box p,
+    .contact-box p {
+        font-size: 0.88rem;
+        line-height: 1.65;
+        overflow-wrap: break-word;
+    }
+
+    .slider-wrapper {
+        height: calc(100vh - 82px);
+        height: calc(100svh - 82px);
+        min-height: 500px;
+    }
+
+    .slide-content,
+    .video-slide .slide-content {
+        top: auto;
+        bottom: 68px;
+        left: 50%;
+        width: min(292px, calc(100% - 72px));
+        max-width: 292px;
+        text-align: center;
+        transform: translateX(-50%);
+    }
+
+    .slide-content h2 {
+        margin-bottom: 10px;
+        font-size: clamp(1.45rem, 8vw, 2rem);
+        line-height: 1.05;
+    }
+
+    .slide-content p {
+        margin-bottom: 14px;
+        font-size: 0.84rem;
+        line-height: 1.5;
+    }
+
+    .video-slide .slide-content .video-tagline {
+        margin-bottom: 10px;
+        font-size: clamp(0.9rem, 4.8vw, 1.05rem);
+        line-height: 1.25;
+        letter-spacing: 0.04em;
+    }
+
+    .slide-content .btn.cta,
+    .video-slide .slide-content .btn.cta {
+        min-height: 38px;
+        padding: 9px 16px;
+        font-size: 0.68rem;
+        letter-spacing: 0.08em;
+    }
+
+    .slider-nav {
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+        min-height: 32px;
+        font-size: 0.88rem;
+    }
+
+    .slider-nav.prev {
+        left: 8px;
+    }
+
+    .slider-nav.next {
+        right: 8px;
+    }
+
+    .indicators {
+        bottom: 18px;
+        gap: 6px;
+    }
+
+    .indicator {
+        width: 14px;
+        height: 2px;
+    }
+
+    .services-grid {
+        gap: 14px;
+        margin-top: 22px;
+    }
+
+    .google-reviews-card,
+    .reviews-sidecard,
+    .reviews-carousel-wrapper,
+    .service-card,
+    .contact-card,
+    .map-card {
+        padding: 16px;
+    }
+
+    .service-card h3,
+    .promo-box h3,
+    .contact-box h3 {
+        font-size: 1.02rem;
+        line-height: 1.25;
+    }
+
+    .google-reviews-header {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 18px;
+        padding: 9px 12px;
+        font-size: 0.72rem;
+        letter-spacing: 0.08em;
+        text-align: center;
+    }
+
+    .reviews-grid {
+        gap: 14px;
+    }
+
+    .review-brand {
+        gap: 10px;
+        padding-bottom: 14px;
+    }
+
+    .review-brand > div:last-child,
+    .review-author {
+        min-width: 0;
+    }
+
+    .review-brand-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+    }
+
+    .review-brand-icon-img {
+        width: 44px;
+        height: 44px;
+    }
+
+    .review-brand h3 {
+        font-size: 0.98rem;
+    }
+
+    .review-brand p,
+    .review-score p,
+    .review-date {
+        font-size: 0.78rem;
+    }
+
+    .review-score {
+        gap: 10px;
+    }
+
+    .google-badge-icon {
+        width: 34px;
+        height: 34px;
+    }
+
+    .stars-row,
+    .review-rating {
+        gap: 3px;
+    }
+
+    .star {
+        font-size: 1rem;
+    }
+
+    .review-cta,
+    .contact-card .btn,
+    .map-btn {
+        width: 100%;
+        min-height: 40px;
+        padding: 10px 14px;
+        font-size: 0.72rem;
+        letter-spacing: 0.08em;
+    }
+
+    .carousel-toolbar {
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 14px;
+    }
+
+    .carousel-title {
+        font-size: 0.9rem;
+    }
+
+    .carousel-controls {
+        margin-left: auto;
+        gap: 6px;
+    }
+
+    .review-arrow {
+        width: 34px;
+        height: 34px;
+        min-width: 34px;
+        min-height: 34px;
+        padding: 0;
+        border-radius: 7px;
+        font-size: 0.9rem;
+    }
+
+    .reviews-carousel {
+        gap: 0;
+    }
+
+    .reviews-carousel .review-card:nth-child(n + 2) {
+        display: none;
+    }
+
+    .review-card {
+        padding: 16px;
+    }
+
+    .review-card-header {
+        gap: 10px;
+        margin-bottom: 12px;
+    }
+
+    .review-avatar {
+        width: 42px;
+        height: 42px;
+        flex: 0 0 42px;
+        min-width: 42px;
+        min-height: 42px;
+    }
+
+    .review-author strong {
+        font-size: 0.9rem;
+    }
+
+    .review-rating {
+        margin-bottom: 10px;
+    }
+
+    .map-wrapper iframe {
+        min-height: 240px;
+    }
+
+    .map-actions {
+        margin-top: 14px;
+    }
+
+    .footer-promo-section {
+        padding: 42px 14px 26px;
+    }
+
+    .footer-promo-grid {
+        gap: 22px;
+    }
+
+    .whatsapp-btn {
+        right: 12px;
+        bottom: 12px;
+    }
+
+    .whatsapp-btn img {
+        width: 36px;
+    }
+}
+
+@media (max-width: 360px) {
+    .navbar {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    nav a {
+        padding: 6px 7px;
+        font-size: 0.68rem;
+    }
+
+    .section {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .slider-wrapper {
+        height: calc(100vh - 82px);
+        height: calc(100svh - 82px);
+        min-height: 470px;
+    }
+
+    .slide-content,
+    .video-slide .slide-content {
+        bottom: 62px;
+        width: min(268px, calc(100% - 64px));
+    }
+
+    .slide-content h2 {
+        font-size: clamp(1.28rem, 8vw, 1.7rem);
+    }
+
+    .section-title h2 {
+        font-size: 1.55rem;
+    }
+
+    .google-reviews-card,
+    .reviews-sidecard,
+    .reviews-carousel-wrapper,
+    .service-card,
+    .contact-card,
+    .map-card {
+        padding: 14px;
     }
 }
