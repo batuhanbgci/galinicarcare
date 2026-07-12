@@ -21,7 +21,7 @@ html {
 }
 
 h1, h2, h3,
-.section-title h2,
+.section-title :is(h1, h2),
 .slide-content h2,
 .price-card-header h1,
 .service-card h3,
@@ -283,7 +283,7 @@ main > .section:not(.hero):not(.footer-promo-section) {
     line-height: 1.75;
 }
 
-.section-title h2::after {
+.section-title :is(h1, h2)::after {
     content: '';
     display: block;
     width: 56px;
@@ -292,7 +292,7 @@ main > .section:not(.hero):not(.footer-promo-section) {
     background: var(--accent);
 }
 
-.section-title h2,
+.section-title :is(h1, h2),
 .price-card-header h1 {
     color: var(--text);
     background: none;
@@ -1205,7 +1205,7 @@ main > .section:not(.hero):not(.footer-promo-section) {
         margin-bottom: 24px;
     }
 
-    .section-title h2 {
+    .section-title :is(h1, h2) {
         font-size: clamp(1.65rem, 8vw, 2.15rem);
         line-height: 1.12;
     }
@@ -1503,7 +1503,7 @@ main > .section:not(.hero):not(.footer-promo-section) {
         font-size: clamp(1.28rem, 8vw, 1.7rem);
     }
 
-    .section-title h2 {
+    .section-title :is(h1, h2) {
         font-size: 1.55rem;
     }
 

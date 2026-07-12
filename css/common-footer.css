@@ -188,6 +188,181 @@
     }
 }
 
+/* WhatsApp teklif formu */
+body.whatsapp-modal-open {
+    overflow: hidden;
+}
+
+.whatsapp-quote-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.78);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.whatsapp-quote-modal.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.whatsapp-quote-dialog {
+    position: relative;
+    width: min(720px, 100%);
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    padding: 34px;
+    border: 1px solid rgba(216, 180, 106, 0.35);
+    border-radius: 18px;
+    background: #111318;
+    color: #f6f7f9;
+    box-shadow: 0 28px 80px rgba(0, 0, 0, 0.55);
+    transform: translateY(12px) scale(0.98);
+    transition: transform 0.2s ease;
+}
+
+.whatsapp-quote-modal.is-open .whatsapp-quote-dialog {
+    transform: translateY(0) scale(1);
+}
+
+.whatsapp-quote-close {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    width: 40px;
+    height: 40px;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    font: 300 30px/1 Arial, sans-serif;
+    cursor: pointer;
+}
+
+.whatsapp-quote-close:hover,
+.whatsapp-quote-close:focus-visible {
+    background: rgba(216, 180, 106, 0.18);
+    outline: 2px solid #d8b46a;
+}
+
+.whatsapp-quote-heading {
+    padding-right: 35px;
+    margin-bottom: 24px;
+}
+
+.whatsapp-quote-heading h2 {
+    margin: 4px 0 8px;
+    color: #fff;
+    font-size: clamp(1.55rem, 4vw, 2rem);
+}
+
+.whatsapp-quote-heading p {
+    margin: 0;
+    color: #aeb6c2;
+    line-height: 1.55;
+}
+
+.whatsapp-quote-heading .whatsapp-quote-kicker {
+    color: #d8b46a;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+}
+
+.whatsapp-quote-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.whatsapp-quote-form label {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    color: #e6e8ec;
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+.whatsapp-quote-form input,
+.whatsapp-quote-form select,
+.whatsapp-quote-form textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 9px;
+    padding: 12px 13px;
+    background: #191c22;
+    color: #fff;
+    font: inherit;
+}
+
+.whatsapp-quote-form input:focus,
+.whatsapp-quote-form select:focus,
+.whatsapp-quote-form textarea:focus {
+    border-color: #d8b46a;
+    outline: 2px solid rgba(216, 180, 106, 0.2);
+}
+
+.whatsapp-quote-form textarea {
+    resize: vertical;
+    min-height: 94px;
+}
+
+.whatsapp-quote-full {
+    margin-top: 16px;
+}
+
+.whatsapp-quote-submit {
+    width: 100%;
+    margin-top: 20px;
+    border: 0;
+    border-radius: 10px;
+    padding: 14px 20px;
+    background: #25d366;
+    color: #07170d;
+    font: inherit;
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.whatsapp-quote-submit:hover {
+    background: #36e477;
+    transform: translateY(-1px);
+}
+
+@media (max-width: 600px) {
+    .whatsapp-quote-modal {
+        align-items: flex-start;
+        padding: 12px;
+    }
+
+    .whatsapp-quote-dialog {
+        max-height: calc(100dvh - 24px);
+        padding: 28px 18px 22px;
+        border-radius: 14px;
+    }
+
+    .whatsapp-quote-grid {
+        grid-template-columns: 1fr;
+        gap: 13px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .whatsapp-quote-modal,
+    .whatsapp-quote-dialog {
+        transition: none;
+    }
+}
+
 /* WhatsApp Button */
 .whatsapp-btn {
     position: fixed;
