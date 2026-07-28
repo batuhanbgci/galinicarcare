@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function () {
             '',
             '*Talep*',
             `İstenen Hizmet: ${data.get('service')}`,
-            `Ek Açıklama: ${data.get('notes').trim() || 'Belirtilmedi'}`
+            `Ek Açıklama: ${data.get('notes').trim() || 'Bilgi almak istiyorum'}`
         ].join('\n');
 
         window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
