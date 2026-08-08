@@ -533,6 +533,7 @@ html {
 }
 
 .reviews-carousel {
+    touch-action: pan-y;
     display: grid;
     gap: 20px;
 }

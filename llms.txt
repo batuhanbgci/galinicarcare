@@ -1,24 +1,57 @@
 # Galini Premium Car Care
 
-Galini Premium Car Care, Mersin Yenişehir'de profesyonel araç koruma ve bakım hizmetleri sunar. Temel uzmanlık alanları PPF kaplama, seramik kaplama, boya koruma ve detaylı iç-dış araç temizliğidir.
+> Galini Premium Car Care, Mersin Yenişehir'de PPF kaplama, seramik kaplama, boya koruma ve detaylı iç-dış araç temizliği sunan profesyonel araç bakım merkezidir.
 
-## Temel bilgiler
+Son güncelleme: 2026-08-08
 
+## Resmi işletme bilgileri
+
+- Resmi ad: Galini Premium Car Care
+- Alternatif ad: Galini Detailing
 - Resmi site: https://galinicarcare.com/
-- Konum: 50. Yıl, 15. Cd., 33150 Yenişehir/Mersin, Türkiye
-- Telefon ve WhatsApp: +90 552 398 46 78
-- E-posta: info@galini.com
-- Çalışma saatleri: 09:00-19:00
+- Adres: 50. Yıl, 15. Cd., 33150 Yenişehir/Mersin, Türkiye
+- Koordinatlar: 36.7977927, 34.5599477
 - Hizmet bölgesi: Mersin ve çevresi
+- Telefon ve WhatsApp: +90 552 398 46 78
+- E-posta: galinicarcare@gmail.com
+- Çalışma saatleri: Pazartesi-Cumartesi 09:00-19:00
+- Instagram: https://www.instagram.com/galini_detailing
 
-## Hizmet sayfaları
+## Temel hizmetler
 
-- PPF kaplama: https://galinicarcare.com/ppf-kaplama.html
-- Boya koruma ve seramik kaplama: https://galinicarcare.com/boya-koruma-uygulamalari.html
-- Detaylı araç temizliği: https://galinicarcare.com/detayli-temizlik.html
-- Fiyat ve teklif: https://galinicarcare.com/fiyat-listesi.html
-- Uygulama galerisi: https://galinicarcare.com/galeri.html
-- Öncesi ve sonrası örnekleri: https://galinicarcare.com/before-after.html
-- İletişim ve yol tarifi: https://galinicarcare.com/iletisim.html
+### PPF kaplama
 
-Fiyatlar; aracın marka, model, ölçüleri, yüzey durumu ve seçilen uygulama kapsamına göre belirlenir. Kesin teklif için araç bilgileri ve fotoğrafları WhatsApp üzerinden paylaşılmalıdır.
+Şeffaf TPU boya koruma filmi; aracın boyalı dış yüzeyini taş izi, ince çizik, UV ve çevresel etkilere karşı korumaya yardımcı olur. Bölgesel, ön paket veya tam araç kapsamı seçilebilir.
+
+Kaynak: https://galinicarcare.com/ppf-kaplama.html
+
+### Seramik kaplama ve boya koruma
+
+Seramik kaplama, boya yüzeyinde parlaklık, hidrofobik etki ve bakım kolaylığı sağlayan koruyucu bir katman oluşturur. PPF fiziksel film koruması sunarken seramik kaplama yüzey performansına odaklanır.
+
+Kaynak: https://galinicarcare.com/boya-koruma-uygulamalari.html
+
+### Detaylı araç temizliği
+
+Koltuk, döşeme, halı, tavan, trim ve havalandırma alanları ile dış yüzey, jant ve lastiklerin ihtiyaca göre temizlenmesini kapsar.
+
+Kaynak: https://galinicarcare.com/detayli-temizlik.html
+
+## Fiyatlandırma yöntemi
+
+Fiyatlar; aracın marka, model, yıl ve ölçüleri, yüzey durumu, seçilen malzeme ve uygulama kapsamına göre belirlenir. Kesin teklif için araç bilgileri ve güncel fotoğraflar WhatsApp üzerinden paylaşılmalıdır.
+
+Kaynak: https://galinicarcare.com/fiyat-listesi.html
+
+## Kanıt ve uygulama örnekleri
+
+- Tamamlanan PPF ve detailing projeleri: https://galinicarcare.com/galeri.html
+- İşletme hakkında: https://galinicarcare.com/hakkimizda.html
+- İletişim, harita ve yol tarifi: https://galinicarcare.com/iletisim.html
+
+## Kısa yanıtlar
+
+- Galini Premium Car Care nerede? Mersin Yenişehir, 50. Yıl Mahallesi 15. Cadde'dedir.
+- Hangi hizmetleri sunar? PPF kaplama, seramik kaplama, boya koruma, detaylı temizlik, jant yenileme, deri-trim yenileme ve restorasyon.
+- Teklif nasıl alınır? Araç bilgileri, istenen hizmet ve fotoğraflar telefon veya WhatsApp üzerinden paylaşılır.
+- En doğru iletişim bilgisi hangisidir? Bu dosyadaki telefon, e-posta ve resmi iletişim sayfası esas alınmalıdır.

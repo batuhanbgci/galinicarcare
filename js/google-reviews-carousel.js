@@ -242,6 +242,68 @@ document.addEventListener('DOMContentLoaded', function () {
         renderCarousel();
     }
 
+    function addSwipeSupport() {
+        if (!carousel) return;
+
+        let startX = 0;
+        let startY = 0;
+        let lastX = 0;
+        let lastY = 0;
+        let isSwiping = false;
+        let isHorizontalSwipe = false;
+
+        carousel.addEventListener('touchstart', function (event) {
+            if (event.touches.length !== 1 || event.target.closest('button, a')) {
+                isSwiping = false;
+                return;
+            }
+
+            const touch = event.touches[0];
+            startX = lastX = touch.clientX;
+            startY = lastY = touch.clientY;
+            isSwiping = true;
+            isHorizontalSwipe = false;
+            clearInterval(autoRotate);
+        }, { passive: true });
+
+        carousel.addEventListener('touchmove', function (event) {
+            if (!isSwiping || event.touches.length !== 1) return;
+
+            const touch = event.touches[0];
+            lastX = touch.clientX;
+            lastY = touch.clientY;
+            const deltaX = lastX - startX;
+            const deltaY = lastY - startY;
+
+            if (!isHorizontalSwipe && Math.abs(deltaX) > 14 && Math.abs(deltaX) > Math.abs(deltaY) * 1.2) {
+                isHorizontalSwipe = true;
+            }
+
+            if (isHorizontalSwipe) event.preventDefault();
+        }, { passive: false });
+
+        carousel.addEventListener('touchend', function () {
+            if (!isSwiping) return;
+
+            const deltaX = lastX - startX;
+            const deltaY = lastY - startY;
+            isSwiping = false;
+
+            if (Math.abs(deltaX) >= 48 && Math.abs(deltaX) >= Math.abs(deltaY) * 1.15) {
+                deltaX < 0 ? showNext() : showPrev();
+            }
+
+            clearInterval(autoRotate);
+            autoRotate = setInterval(showNext, 7000);
+        });
+
+        carousel.addEventListener('touchcancel', function () {
+            isSwiping = false;
+            clearInterval(autoRotate);
+            autoRotate = setInterval(showNext, 7000);
+        });
+    }
+
     function updateReviews(newReviews) {
         if (!Array.isArray(newReviews) || !newReviews.length) return;
         reviews = newReviews; 
@@ -269,6 +331,7 @@ document.addEventListener('DOMContentLoaded', function () {
     refreshTimer = setInterval(fetchReviews, 5 * 60 * 1000);
 
     let autoRotate = setInterval(showNext, 7000);
+    addSwipeSupport();
     [prevBtn, nextBtn, carousel].forEach(item => {
         item?.addEventListener('mouseenter', () => clearInterval(autoRotate));
         item?.addEventListener('mouseleave', () => {
