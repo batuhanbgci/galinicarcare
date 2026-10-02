@@ -1,0 +1,47 @@
+.contact-section{background:radial-gradient(ellipse at 10% 10%,rgba(216,180,106,.09),transparent 60%),var(--bg-deep);border-radius:0}
+.contact-intro{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center;margin:48px 0}
+.contact-eyebrow{display:block;color:var(--accent);font-size:.68rem;font-weight:600;letter-spacing:.2em;margin-bottom:18px}
+.contact-heading h1{font-size:clamp(2.6rem,4.6vw,4.5rem);line-height:1.13;letter-spacing:-.025em;margin-bottom:24px}
+.contact-heading h1 em{font-weight:500;color:var(--accent-strong)}
+.contact-heading>p{color:var(--muted);font-size:.95rem;line-height:1.85;max-width:470px;margin-bottom:28px}
+.contact-primary{display:inline-flex;align-items:center;justify-content:center;gap:24px;text-transform:none;letter-spacing:0}
+.contact-location-label{color:var(--muted);font-size:.72rem;margin-top:20px}
+.contact-location-label>span{color:var(--accent);margin-right:6px}
+.contact-methods{display:grid;gap:14px;min-width:0}
+.contact-method{display:flex;align-items:center;gap:20px;padding:26px;background:linear-gradient(120deg,#ffffff05,transparent),var(--surface);border:1px solid var(--line);border-radius:12px;transition:border-color .25s,transform .25s}
+.contact-method:hover{border-color:var(--accent);transform:translateX(4px)}
+.method-icon{display:grid;place-items:center;width:46px;height:46px;flex-shrink:0;color:var(--accent);background:var(--accent-soft);border-radius:50%;font-size:1.2rem}
+.contact-method>span:last-child{min-width:0}
+.contact-method small{display:block;font-size:.6rem;letter-spacing:.16em;color:var(--accent);margin-bottom:7px}
+.contact-method strong{display:block;font-size:clamp(.85rem,1.3vw,1.05rem);font-weight:600;overflow-wrap:anywhere;margin-bottom:5px}
+.contact-method strong+span{display:block;color:var(--muted);font-size:.75rem;line-height:1.6}
+.appointment-note{display:flex;gap:18px;align-items:flex-start;padding:24px 28px;background:var(--accent-soft);border:1px solid #d8b46a30;border-radius:12px;margin:0 0 64px}
+.note-mark{display:grid;place-items:center;border:1px solid var(--accent);border-radius:50%;color:var(--accent);width:26px;height:26px;flex-shrink:0;font-family:Georgia,serif;font-style:italic}
+.appointment-note h2{font-family:'Montserrat',sans-serif;font-size:.9rem;margin-bottom:8px}
+.appointment-note p{font-size:.82rem;line-height:1.8;color:var(--muted)}
+.contact-section .contact-card{max-width:none;padding:0;background:transparent;border:0;gap:30px}
+.contact-section .contact-card>p{display:none}
+.contact-section .contact-card .contact-video .video-header{text-align:left;padding-bottom:24px!important}
+.contact-section .contact-card .contact-video .video-header h3{text-align:left;font-size:clamp(1.6rem,3vw,2.5rem)!important}
+.contact-section .contact-card .contact-video .location-video{max-height:480px;border:1px solid var(--line);border-radius:12px}
+.map-section .section-title{text-align:left}
+.map-section .section-title p{margin-left:0}
+.map-section .map-card{padding:18px;border-radius:12px}
+.map-section .map-wrapper{border-radius:8px}
+.map-section .map-wrapper iframe{min-height:380px}
+.map-section .map-actions{align-items:center;justify-content:space-between;gap:20px;padding:8px}
+.map-visit-note{color:var(--muted);font-size:.8rem}
+.contact-intro a:focus-visible,.map-actions a:focus-visible{outline:2px solid var(--accent-strong);outline-offset:5px}
+@media(max-width:980px){.contact-intro{gap:30px}.contact-method{padding:20px;gap:14px}}
+@media(max-width:720px){
+.contact-intro{grid-template-columns:1fr;gap:32px;margin:28px 0}
+.contact-heading h1{font-size:clamp(2.3rem,9vw,3.5rem)}
+.contact-method strong{font-size:.95rem}
+.contact-primary{width:100%;font-size:.78rem}
+.appointment-note{padding:20px;gap:12px;margin-bottom:44px}
+.contact-section .contact-card{padding:0}
+.map-section .map-actions{flex-direction:column;align-items:stretch}
+.map-section .map-btn{width:100%}
+.map-section .map-wrapper iframe{min-height:300px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.contact-method{transition:none}}

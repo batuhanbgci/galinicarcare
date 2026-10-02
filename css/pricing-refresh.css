@@ -1,0 +1,51 @@
+/* Pricing page: shared gold accents and clearer service hierarchy. */
+.price-hero{min-height:480px;padding:52px;background:linear-gradient(90deg,#07080af2 0%,#07080ad9 48%,#07080a35 100%),url('../img/2.jpeg') center 48%/cover;border-radius:14px;justify-content:center}
+.price-hero::before{display:none}
+.price-hero .price-eyebrow{border:0;background:transparent;padding:0;letter-spacing:.2em;font-size:.65rem;font-weight:600}
+.price-hero h1{font-weight:500;font-size:clamp(2.5rem,4.5vw,4.6rem);line-height:1.12;max-width:720px;letter-spacing:-.025em;margin:22px 0}
+.price-hero h1 em{color:var(--accent-strong);font-weight:500}
+.price-hero p{max-width:560px;font-size:.92rem;color:#ced2d9;line-height:1.85}
+.price-hero-actions .btn{font-size:.75rem;text-transform:none;letter-spacing:0}
+.price-note-panel{background:var(--accent-soft);border-color:#d8b46a35;border-radius:12px;padding:24px;margin-top:22px;font-size:.82rem;line-height:1.8}
+.pricing-section-heading{margin:56px 0 30px}
+.pricing-eyebrow{display:block;color:var(--accent);font-size:.65rem;font-weight:600;letter-spacing:.18em;margin-bottom:14px}
+.pricing-section-heading h2,.pricing-steps-intro h2{font-size:clamp(1.8rem,3vw,2.7rem);line-height:1.2;margin-bottom:14px}
+.pricing-section-heading p{color:var(--muted);font-size:.88rem;line-height:1.8}
+.price-services-grid{scroll-margin-top:110px;gap:22px}
+.price-service-card{border-radius:12px;padding:30px;min-height:0}
+.pricing-card-number{color:var(--accent);font-family:'Playfair Display',Georgia,serif;font-size:2rem;line-height:1;opacity:.7;margin-bottom:24px}
+.price-service-card .price-tag{font-size:.6rem;font-weight:600;padding:7px 10px;letter-spacing:.07em}
+.price-service-card h2{font-size:1.65rem;font-weight:500;line-height:1.2}
+.price-service-card p,.price-service-card li{font-size:.82rem;line-height:1.8}
+.price-service-card ul{margin-bottom:26px}
+.pricing-quote-label{margin-top:auto;padding-top:18px;border-top:1px solid var(--line);width:100%;color:var(--muted);font-size:.68rem}
+.price-service-card>a{display:flex;align-items:center;justify-content:space-between;width:100%;margin-top:12px;font-size:.8rem;font-weight:600;padding:10px 0}
+.price-service-card>a span{font-size:1.1rem}
+.price-service-card:hover{border-color:var(--accent);transform:translateY(-4px)}
+.pricing-steps{margin:64px 0;padding:36px;border:1px solid var(--line);border-radius:12px;background:radial-gradient(ellipse at top right,#d8b46a0d,transparent 60%),var(--surface-3)}
+.pricing-steps-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-top:32px}
+.pricing-steps-grid article{border-top:1px solid #d8b46a45;padding-top:22px}
+.pricing-steps-grid article>span{color:var(--accent);font-size:.75rem;letter-spacing:.1em}
+.pricing-steps-grid h3{font-size:1.3rem;margin:14px 0 10px}
+.pricing-steps-grid p{font-size:.82rem;line-height:1.8;color:var(--muted)}
+.price-detail-grid .price-card,.price-factor-card,.price-cta-card{border-radius:12px}
+.price-card-header h2{font-weight:500;font-size:clamp(1.6rem,2.6vw,2.3rem);line-height:1.2}
+.price-feature-list li{font-size:.85rem;line-height:1.85}
+.price-cta-card{background:linear-gradient(135deg,#d8b46a18,transparent),var(--surface);border-color:#d8b46a40}
+.price-cta-card .btn{font-size:.75rem;text-transform:none;letter-spacing:0}
+.price-hero-actions a:focus-visible,.price-service-card>a:focus-visible{outline:2px solid var(--accent-strong);outline-offset:5px}
+@media(min-width:721px) and (max-width:1020px){.price-services-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:720px){
+.price-hero{padding:30px 22px;min-height:440px;background-position:60% center}
+.price-hero h1{font-size:clamp(2.15rem,8.5vw,3.4rem)}
+.price-hero-actions{flex-direction:column;align-items:stretch}
+.price-hero-actions .btn{width:100%;text-align:center}
+.price-note-panel{flex-direction:column;align-items:flex-start;padding:20px}
+.price-services-grid,.pricing-steps-grid{grid-template-columns:1fr}
+.price-service-card{padding:24px}
+.pricing-steps{padding:24px;margin:44px 0}
+.pricing-steps-grid{gap:26px}
+.pricing-section-heading{margin-top:40px}
+.price-cta-card .btn{width:100%}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.price-service-card{transition:none}}
