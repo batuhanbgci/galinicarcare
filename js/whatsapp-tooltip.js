@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="whatsapp-quote-dialog" role="dialog" aria-modal="true" aria-labelledby="whatsappQuoteTitle">
             <button class="whatsapp-quote-close" type="button" aria-label="Teklif formunu kapat">&times;</button>
             <div class="whatsapp-quote-heading">
+                <img class="whatsapp-quote-logo" src="img/icon.png" alt="GALİNİ Premium Car Care">
                 <p class="whatsapp-quote-kicker">GALINI CAR CARE</p>
                 <h2 id="whatsappQuoteTitle">WhatsApp'tan Teklif Alın</h2>
                 <p>Bilgilerinizi paylaşın, talebinizi WhatsApp üzerinden hazır mesaj olarak iletin.</p>

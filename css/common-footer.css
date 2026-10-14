@@ -265,6 +265,16 @@ body.whatsapp-modal-open {
     margin-bottom: 24px;
 }
 
+.whatsapp-quote-logo {
+    display: block;
+    width: auto;
+    height: 42px;
+    max-width: min(177px, 100%);
+    object-fit: contain;
+    object-position: left center;
+    margin-bottom: 12px;
+}
+
 .whatsapp-quote-heading h2 {
     margin: 4px 0 8px;
     color: #fff;
