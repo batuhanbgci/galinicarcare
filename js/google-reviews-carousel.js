@@ -151,9 +151,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const carousel = document.querySelector('#reviewsCarousel');
     const prevBtn = document.querySelector('.google-reviews-section .review-arrow.prev');
     const nextBtn = document.querySelector('.google-reviews-section .review-arrow.next');
-    const REVIEWS_API_URL = window.GOOGLE_REVIEWS_API_URL || './reviews-data.json';
+    const REVIEWS_API_URL = window.location.protocol !== 'file:'
+        && typeof window.GOOGLE_REVIEWS_API_URL === 'string'
+        ? window.GOOGLE_REVIEWS_API_URL.trim()
+        : '';
     let currentIndex = 0;
-    let refreshTimer = null;
 
     function normalizeReview(item, index) {
         const defaultColors = ['#f97316', '#2563eb', '#0f766e', '#7c3aed', '#d97706'];
@@ -312,13 +314,19 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     async function fetchReviews() {
+        if (!REVIEWS_API_URL) return;
+
         try {
             const response = await fetch(REVIEWS_API_URL, { cache: 'no-cache' });
             if (!response.ok) throw new Error(`Fetch failed: ${response.status}`);
             const payload = await response.json();
-            updateReviews(Array.isArray(payload) ? payload : payload.reviews || []);
+            const apiReviews = Array.isArray(payload) ? payload : payload?.reviews;
+            if (!Array.isArray(apiReviews) || !apiReviews.length) {
+                throw new Error('API response does not contain any reviews.');
+            }
+            updateReviews(apiReviews);
         } catch (error) {
-            console.warn('Yorumlar API üzerinden alınamadı, yerel dizi kullanılıyor.', error);
+            console.warn('Yorumlar API üzerinden alınamadı, yerel yorumlar gösteriliyor.', error);
         }
     }
 
@@ -326,9 +334,10 @@ document.addEventListener('DOMContentLoaded', function () {
     nextBtn?.addEventListener('click', showNext);
 
     renderCarousel();
-    fetchReviews();
-
-    refreshTimer = setInterval(fetchReviews, 5 * 60 * 1000);
+    if (REVIEWS_API_URL) {
+        fetchReviews();
+        window.setInterval(fetchReviews, 5 * 60 * 1000);
+    }
 
     let autoRotate = setInterval(showNext, 7000);
     addSwipeSupport();

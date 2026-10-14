@@ -1,5 +1,5 @@
 /* Pricing page: shared gold accents and clearer service hierarchy. */
-.price-hero{min-height:480px;padding:52px;background:linear-gradient(90deg,#07080af2 0%,#07080ad9 48%,#07080a35 100%),url('../img/2.jpeg') center 48%/cover;border-radius:14px;justify-content:center}
+.price-hero{min-height:480px;padding:52px;background:linear-gradient(90deg,#07080af2 0%,#07080ad9 48%,#07080a35 100%),url('../img/seramik-kaplama.jpg') center 48%/cover;border-radius:14px;justify-content:center}
 .price-hero::before{display:none}
 .price-hero .price-eyebrow{border:0;background:transparent;padding:0;letter-spacing:.2em;font-size:.65rem;font-weight:600}
 .price-hero h1{font-weight:500;font-size:clamp(2.5rem,4.5vw,4.6rem);line-height:1.12;max-width:720px;letter-spacing:-.025em;margin:22px 0}

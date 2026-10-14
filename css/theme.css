@@ -66,10 +66,10 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(11, 12, 15, 0.9);
-    border-bottom: 1px solid var(--line-soft);
-    box-shadow: 0 12px 34px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(18px);
+    background: linear-gradient(180deg, rgba(8, 9, 12, 0.94), rgba(11, 12, 15, 0.82));
+    border-bottom: 1px solid rgba(216, 180, 106, 0.28);
+    box-shadow: 0 10px 32px rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(20px) saturate(145%);
 }
 
 .navbar {
@@ -79,8 +79,8 @@ header {
     justify-content: space-between;
     max-width: 1180px;
     margin: 0 auto;
-    min-height: 84px;
-    padding: 10px 24px;
+    min-height: 66px;
+    padding: 4px 24px;
     gap: 18px;
 }
 
@@ -88,6 +88,12 @@ header {
     display: inline-flex;
     align-items: center;
     gap: 10px;
+    transition: filter 0.25s ease, transform 0.25s ease;
+}
+
+.logo a:hover {
+    filter: drop-shadow(0 0 12px rgba(216, 180, 106, 0.24));
+    transform: translateY(-1px);
 }
 
 .logo-icon {
@@ -142,29 +148,49 @@ nav {
 }
 
 nav a {
-    color: #dfe3ea;
+    position: relative;
+    color: #d7dbe3;
     font-size: 0.88rem;
-    font-weight: 600;
-    padding: 9px 11px;
-    border-radius: 8px;
+    font-weight: 550;
+    padding: 9px 12px;
+    border-radius: 999px;
     white-space: nowrap;
-    transition: color 0.2s ease, background 0.2s ease;
+    transition: color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
 }
 
 nav a::after {
+    display: block;
+    position: absolute;
+    right: 50%;
+    bottom: 5px;
+    left: 50%;
+    height: 1px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-strong));
+    transition: left 0.2s ease, right 0.2s ease;
+}
+
+.nav-links > li:not(.dropdown) > a::after {
     display: none;
 }
 
 nav a:hover,
 nav a:focus,
 nav a.active {
-    color: var(--text);
-    background: rgba(255, 255, 255, 0.08);
+    color: #fff4d8;
+    background: rgba(216, 180, 106, 0.09);
     transform: none;
 }
 
 nav a.active {
-    box-shadow: inset 0 0 0 1px rgba(216, 180, 106, 0.3);
+    box-shadow: inset 0 0 0 1px rgba(216, 180, 106, 0.22), 0 4px 16px rgba(216, 180, 106, 0.06);
+}
+
+nav a:hover::after,
+nav a:focus-visible::after,
+nav a.active::after {
+    right: calc(50% - 9px);
+    left: calc(50% - 9px);
 }
 
 .mobile-menu-toggle {
@@ -313,18 +339,21 @@ nav a.active {
     gap: 8px;
     min-height: 40px;
     padding: 8px 12px;
-    color: var(--text);
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid var(--line-soft);
-    border-radius: 8px;
+    color: #f2d99c;
+    background: linear-gradient(135deg, rgba(216, 180, 106, 0.16), rgba(255, 255, 255, 0.035));
+    border: 1px solid rgba(216, 180, 106, 0.32);
+    border-radius: 999px;
     font-size: 0.82rem;
     font-weight: 700;
-    transition: background 0.2s ease, border-color 0.2s ease;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 4px 16px rgba(0, 0, 0, 0.16);
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .instagram-link:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(216, 180, 106, 0.35);
+    background: linear-gradient(135deg, rgba(216, 180, 106, 0.25), rgba(255, 255, 255, 0.07));
+    border-color: rgba(240, 207, 132, 0.6);
+    box-shadow: 0 6px 20px rgba(216, 180, 106, 0.12);
+    transform: translateY(-1px);
 }
 
 .instagram-link img {
@@ -675,9 +704,9 @@ main > .section:not(.hero):not(.footer-promo-section) {
 }
 
 .slider-wrapper {
-    height: calc(100vh - 84px);
-    height: calc(100svh - 84px);
-    min-height: 560px;
+    height: calc(100vh + 36px);
+    height: calc(100svh + 36px);
+    min-height: 680px;
     background: #07080a;
 }
 
@@ -1113,15 +1142,16 @@ main > .section:not(.hero):not(.footer-promo-section) {
     }
 
     .navbar.nav-open .mobile-menu-toggle {
-        border-color: rgba(255, 255, 255, 0.18);
-        background: rgba(255, 255, 255, 0.09);
+        border-color: rgba(240, 207, 132, 0.48);
+        background: rgba(216, 180, 106, 0.16);
+        box-shadow: 0 0 18px rgba(216, 180, 106, 0.12);
     }
 
     nav {
         position: absolute;
-        top: calc(100% + 8px);
-        left: 24px;
-        right: 24px;
+        top: calc(100% + 10px);
+        left: 16px;
+        right: 16px;
         order: 4;
         display: none;
         width: auto;
@@ -1130,10 +1160,10 @@ main > .section:not(.hero):not(.footer-promo-section) {
         margin-left: 0;
         padding: 8px;
         overflow-y: auto;
-        background: rgba(17, 19, 24, 0.98);
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        box-shadow: var(--shadow);
+        background: linear-gradient(155deg, rgba(20, 21, 25, 0.99), rgba(10, 11, 14, 0.98));
+        border: 1px solid rgba(216, 180, 106, 0.2);
+        border-radius: 14px;
+        box-shadow: 0 18px 48px rgba(0, 0, 0, 0.48), inset 0 1px 0 rgba(255, 255, 255, 0.045);
         scrollbar-width: none;
         z-index: 120;
     }
@@ -1165,6 +1195,11 @@ main > .section:not(.hero):not(.footer-promo-section) {
         width: 100%;
         justify-content: space-between;
         padding: 10px 12px;
+        border-radius: 10px;
+    }
+
+    .nav-links > li:not(.dropdown) > a::after {
+        display: none;
     }
 
     .dropdown > .dropdown-menu {
@@ -1237,7 +1272,8 @@ main > .section:not(.hero):not(.footer-promo-section) {
     }
 
     .navbar {
-        padding: 10px 16px;
+        padding: 6px 16px;
+        min-height: 58px;
     }
 
     .logo,
@@ -1255,9 +1291,9 @@ main > .section:not(.hero):not(.footer-promo-section) {
     }
 
     .slider-wrapper {
-        height: calc(100vh - 94px);
-        height: calc(100svh - 94px);
-        min-height: 520px;
+        height: calc(100vh + 26px);
+        height: calc(100svh + 26px);
+        min-height: 640px;
     }
 
     .slides {
@@ -1399,33 +1435,33 @@ main > .section:not(.hero):not(.footer-promo-section) {
 
     .navbar {
         min-height: 0;
-        padding: 8px 10px;
+        padding: 4px 10px;
         gap: 8px;
     }
 
     .logo,
     .logo a {
-        height: 34px;
+        height: 30px;
     }
 
     header .logo-icon {
-        height: 34px;
+        height: 30px;
         max-width: 118px;
     }
 
     .instagram-link {
-        width: 40px;
-        min-width: 40px;
-        min-height: 40px;
-        padding: 8px;
+        width: 36px;
+        min-width: 36px;
+        min-height: 36px;
+        padding: 6px;
         border-radius: 8px;
     }
 
     .mobile-menu-toggle {
-        width: 34px;
-        height: 34px;
-        min-width: 34px;
-        min-height: 34px;
+        width: 30px;
+        height: 30px;
+        min-width: 30px;
+        min-height: 30px;
         border-radius: 7px;
     }
 
@@ -1482,9 +1518,9 @@ main > .section:not(.hero):not(.footer-promo-section) {
     }
 
     .slider-wrapper {
-        height: calc(100vh - 82px);
-        height: calc(100svh - 82px);
-        min-height: 500px;
+        height: calc(100vh + 38px);
+        height: calc(100svh + 38px);
+        min-height: 620px;
     }
 
     .slide-content,
@@ -1748,9 +1784,9 @@ main > .section:not(.hero):not(.footer-promo-section) {
     }
 
     .slider-wrapper {
-        height: calc(100vh - 82px);
-        height: calc(100svh - 82px);
-        min-height: 470px;
+        height: calc(100vh + 38px);
+        height: calc(100svh + 38px);
+        min-height: 590px;
     }
 
     .slide-content,
