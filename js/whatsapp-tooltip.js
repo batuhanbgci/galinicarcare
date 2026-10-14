@@ -99,8 +99,18 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     closeButton.addEventListener('click', closeModal);
-    modal.addEventListener('mousedown', function (event) {
-        if (event.target === modal) closeModal();
+    modal.addEventListener('click', function (event) {
+        if (event.target === modal) {
+            closeModal();
+            return;
+        }
+
+        if (!(event.target instanceof Element) || event.target.closest('input, select, textarea, button, label, a')) return;
+
+        const activeElement = document.activeElement;
+        if (form.contains(activeElement) && typeof activeElement.blur === 'function') {
+            activeElement.blur();
+        }
     });
 
     document.addEventListener('keydown', function (event) {
