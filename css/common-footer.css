@@ -329,23 +329,46 @@ body.whatsapp-modal-open {
     margin-top: 16px;
 }
 
-.whatsapp-quote-submit {
-    width: 100%;
+.whatsapp-quote-actions {
+    display: flex;
+    gap: 10px;
     margin-top: 20px;
+}
+
+.whatsapp-quote-submit,
+.whatsapp-quote-cancel {
+    min-height: 48px;
     border: 0;
     border-radius: 10px;
     padding: 14px 20px;
-    background: #25d366;
-    color: #07170d;
     font: inherit;
     font-weight: 800;
     cursor: pointer;
     transition: transform 0.2s ease, background 0.2s ease;
 }
 
+.whatsapp-quote-submit {
+    flex: 1;
+    margin: 0;
+    background: #25d366;
+    color: #07170d;
+}
+
+.whatsapp-quote-cancel {
+    flex: 0 0 auto;
+    background: rgba(255, 255, 255, 0.08);
+    color: #f6f7f9;
+}
+
 .whatsapp-quote-submit:hover {
     background: #36e477;
     transform: translateY(-1px);
+}
+
+.whatsapp-quote-cancel:hover,
+.whatsapp-quote-cancel:focus-visible {
+    background: rgba(255, 255, 255, 0.15);
+    outline: 2px solid rgba(216, 180, 106, 0.65);
 }
 
 @media (max-width: 600px) {

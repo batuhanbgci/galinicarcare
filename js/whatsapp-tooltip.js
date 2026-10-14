@@ -55,7 +55,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 <label class="whatsapp-quote-full">Ek açıklama
                     <textarea name="notes" rows="4" placeholder="Aracınız veya talebinizle ilgili eklemek istedikleriniz"></textarea>
                 </label>
-                <button class="whatsapp-quote-submit" type="submit">WhatsApp'tan Gönder</button>
+                <div class="whatsapp-quote-actions">
+                    <button class="whatsapp-quote-submit" type="submit">WhatsApp'tan Gönder</button>
+                    <button class="whatsapp-quote-cancel" type="button">Vazgeç</button>
+                </div>
             </form>
         </div>`;
     document.body.appendChild(modal);
@@ -63,6 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const dialog = modal.querySelector('.whatsapp-quote-dialog');
     const form = modal.querySelector('.whatsapp-quote-form');
     const closeButton = modal.querySelector('.whatsapp-quote-close');
+    const cancelButton = modal.querySelector('.whatsapp-quote-cancel');
 
     function openModal(trigger) {
         lastFocusedElement = trigger;
@@ -99,13 +103,20 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     closeButton.addEventListener('click', closeModal);
+    cancelButton.addEventListener('click', closeModal);
     modal.addEventListener('click', function (event) {
         if (event.target === modal) {
             closeModal();
             return;
         }
 
-        if (!(event.target instanceof Element) || event.target.closest('input, select, textarea, button, label, a')) return;
+        if (!(event.target instanceof Element)) return;
+
+        const clickedControl = event.target.closest('input, select, textarea, button, a');
+        if (clickedControl) return;
+
+        const clickedLabel = event.target.closest('label');
+        if (clickedLabel) event.preventDefault();
 
         const activeElement = document.activeElement;
         if (form.contains(activeElement) && typeof activeElement.blur === 'function') {
