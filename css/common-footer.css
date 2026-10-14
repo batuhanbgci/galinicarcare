@@ -310,6 +310,7 @@ body.whatsapp-modal-open {
     background: #191c22;
     color: #fff;
     font: inherit;
+    font-size: 16px;
 }
 
 .whatsapp-quote-form input:focus,
