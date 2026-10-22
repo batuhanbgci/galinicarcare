@@ -191,17 +191,23 @@ document.addEventListener('DOMContentLoaded', function () {
         const avatar = document.createElement('div');
         avatar.className = 'review-avatar';
         avatar.style.backgroundColor = review.color;
+
+        function showAvatarFallback() {
+            const fallback = document.createElement('div');
+            fallback.className = 'review-avatar-fallback';
+            fallback.textContent = review.name.charAt(0).toLocaleUpperCase('tr-TR');
+            avatar.replaceChildren(fallback);
+        }
+
         if (review.avatarUrl) {
             const image = document.createElement('img');
             image.src = review.avatarUrl;
             image.alt = `${review.name} profil fotoğrafı`;
             image.referrerPolicy = 'no-referrer';
+            image.addEventListener('error', showAvatarFallback, { once: true });
             avatar.appendChild(image);
         } else {
-            const fallback = document.createElement('div');
-            fallback.className = 'review-avatar-fallback';
-            fallback.textContent = review.name.charAt(0).toLocaleUpperCase('tr-TR');
-            avatar.appendChild(fallback);
+            showAvatarFallback();
         }
         const author = document.createElement('div');
         author.className = 'review-author';
