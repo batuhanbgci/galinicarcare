@@ -159,51 +159,80 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function normalizeReview(item, index) {
         const defaultColors = ['#f97316', '#2563eb', '#0f766e', '#7c3aed', '#d97706'];
-        const rawDate = item.commentDate || item.date || item.relative_time_description || item.time || '';
+        item = item && typeof item === 'object' ? item : {};
+        const rawDateValue = item.commentDate || item.date || item.relative_time_description || item.time || '';
+        const rawDate = typeof rawDateValue === 'string' ? rawDateValue : '';
         const finalDate = (rawDate.includes('-') && rawDate.length >= 10) ? timeAgo(rawDate) : (rawDate || 'Yeni');
+        const rawRating = Number(item.rating || item.star || 5);
+        const rawAvatar = item.profile_photo_url || item.profile_photo || '';
+        let avatarUrl = '';
+        try {
+            const parsedAvatar = new URL(rawAvatar, window.location.origin);
+            if (parsedAvatar.protocol === 'https:' || parsedAvatar.origin === window.location.origin) avatarUrl = parsedAvatar.href;
+        } catch (_) {}
 
         return {
-            name: item.name || item.author_name || item.author || `Müşteri ${index + 1}`,
+            name: String(item.name || item.author_name || item.author || `Müşteri ${index + 1}`).slice(0, 100),
             date: finalDate, 
-            rating: Math.min(5, Math.max(1, Number(item.rating || item.star || 5))),
-            text: item.text || item.review || 'Yorum içeriği mevcut değil.',
-            color: item.color || defaultColors[index % defaultColors.length],
-            avatarUrl: item.profile_photo_url || item.profile_photo || ''
+            rating: Number.isFinite(rawRating) ? Math.min(5, Math.max(1, rawRating)) : 5,
+            text: String(item.text || item.review || 'Yorum içeriği mevcut değil.').slice(0, 5000),
+            color: defaultColors[index % defaultColors.length],
+            avatarUrl
         };
-    }
-
-    function buildStars(rating) {
-        return Array.from({ length: 5 }, (_, index) => {
-            return `<span class="star">${index < rating ? '★' : '☆'}</span>`;
-        }).join('');
     }
 
     function createReviewCard(review, active) {
         const isLong = review.text.length > 220;
         const previewText = isLong ? review.text.slice(0, 220).trim() + '...' : review.text;
-        const avatarHtml = review.avatarUrl
-            ? `<img src="${review.avatarUrl}" alt="${review.name} profil fotoğrafı">`
-            : `<div class="review-avatar-fallback">${review.name.charAt(0).toUpperCase()}</div>`;
+        const card = document.createElement('article');
+        card.className = `review-card${active ? ' active' : ''}`;
+        const header = document.createElement('div');
+        header.className = 'review-card-header';
+        const avatar = document.createElement('div');
+        avatar.className = 'review-avatar';
+        avatar.style.backgroundColor = review.color;
+        if (review.avatarUrl) {
+            const image = document.createElement('img');
+            image.src = review.avatarUrl;
+            image.alt = `${review.name} profil fotoğrafı`;
+            image.referrerPolicy = 'no-referrer';
+            avatar.appendChild(image);
+        } else {
+            const fallback = document.createElement('div');
+            fallback.className = 'review-avatar-fallback';
+            fallback.textContent = review.name.charAt(0).toLocaleUpperCase('tr-TR');
+            avatar.appendChild(fallback);
+        }
+        const author = document.createElement('div');
+        author.className = 'review-author';
+        const name = document.createElement('strong');
+        name.textContent = review.name;
+        const date = document.createElement('span');
+        date.className = 'review-date';
+        date.textContent = review.date;
+        author.append(name, date);
+        header.append(avatar, author);
 
-        // YENİ DÜZELTME: Kart genişliğine tam oturan, ideal dengede boyut (145px)
-        const imageHtml = '';
-
-        return `
-            <article class="review-card ${active ? 'active' : ''}">
-                <div class="review-card-header">
-                    <div class="review-avatar" style="background: ${review.color};">
-                        ${avatarHtml}
-                    </div>
-                    <div class="review-author">
-                        <strong>${review.name}</strong>
-                        <span class="review-date">${review.date}</span>
-                    </div>
-                </div>
-                <div class="review-rating">${buildStars(review.rating)}</div>
-                <p class="review-text">${previewText}</p>
-                ${imageHtml} ${isLong ? '<button class="review-more" type="button">Daha fazla oku</button>' : ''}
-            </article>
-        `;
+        const rating = document.createElement('div');
+        rating.className = 'review-rating';
+        for (let index = 0; index < 5; index += 1) {
+            const star = document.createElement('span');
+            star.className = 'star';
+            star.textContent = index < review.rating ? '★' : '☆';
+            rating.appendChild(star);
+        }
+        const text = document.createElement('p');
+        text.className = 'review-text';
+        text.textContent = previewText;
+        card.append(header, rating, text);
+        if (isLong) {
+            const more = document.createElement('button');
+            more.className = 'review-more';
+            more.type = 'button';
+            more.textContent = 'Daha fazla oku';
+            card.appendChild(more);
+        }
+        return card;
     }
 
     function renderCarousel() {
@@ -216,7 +245,7 @@ document.addEventListener('DOMContentLoaded', function () {
             normalizeReview(reviews[(start + 2) % reviews.length], (start + 2) % reviews.length)
         ];
 
-        carousel.innerHTML = visibleReviews.map((review, index) => createReviewCard(review, index === 0)).join('');
+        carousel.replaceChildren(...visibleReviews.map((review, index) => createReviewCard(review, index === 0)));
         attachReadMore();
     }
 
