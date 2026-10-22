@@ -1,0 +1,155 @@
+/* Shared visual rules for the site shell and primary actions. Load after page styles. */
+.dropdown-menu li a::after {
+    display: none;
+}
+
+@media (min-width: 981px) {
+    .dropdown > .dropdown-menu {
+        width: 372px;
+        min-width: 372px;
+        padding: 8px 0;
+    }
+
+    .dropdown-menu li a {
+        display: block;
+        padding: 12px 20px;
+        border-radius: 6px;
+        font-size: 0.95rem;
+        line-height: 1.8;
+        white-space: nowrap;
+    }
+
+    .dropdown-menu li a:hover,
+    .dropdown-menu li a:focus-visible,
+    .dropdown-menu li a.active {
+        padding-left: 24px;
+    }
+}
+
+.btn,
+a.btn,
+button.btn,
+.btn.cta,
+.map-btn,
+.review-cta,
+.contact-primary,
+.price-hero-actions .btn,
+.price-cta-card .btn,
+.hero-actions .btn.cta {
+    min-height: 44px;
+    padding: 11px 22px;
+    border: 1px solid rgba(216, 180, 106, 0.48);
+    border-radius: 8px;
+    color: var(--text, #f6f7f9);
+    background: rgba(17, 19, 24, 0.72);
+    box-shadow: none;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1.35;
+    letter-spacing: 0.02em;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+    transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn:hover,
+a.btn:hover,
+button.btn:hover,
+.btn.cta:hover,
+.map-btn:hover,
+.review-cta:hover,
+.contact-primary:hover,
+.price-hero-actions .btn:hover,
+.price-cta-card .btn:hover,
+.hero-actions .btn.cta:hover {
+    color: #0b0c0f;
+    background: var(--accent-strong, #f0cf84);
+    border-color: var(--accent-strong, #f0cf84);
+    box-shadow: none;
+    transform: translateY(-1px);
+}
+
+.btn:focus-visible,
+a.btn:focus-visible,
+button.btn:focus-visible,
+.map-btn:focus-visible,
+.review-cta:focus-visible {
+    outline: 2px solid var(--accent-strong, #f0cf84);
+    outline-offset: 3px;
+}
+
+.footer-promo-section {
+    padding: 58px 24px 34px;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.025), transparent 42%),
+        var(--surface-3, #0f1115);
+    border-top: 1px solid var(--line-soft, rgba(255, 255, 255, 0.06));
+}
+
+.footer-promo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    width: min(100%, 1160px);
+    margin-inline: auto;
+}
+
+.footer-promo-grid .promo-box,
+.footer-promo-grid .contact-box {
+    min-width: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.footer-promo-grid h3 {
+    margin: 0 0 12px;
+    color: var(--text, #f6f7f9);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+.footer-promo-grid p,
+.footer-promo-grid .contact-box a {
+    color: var(--muted, #aeb6c2);
+    font-size: 0.82rem;
+    line-height: 1.8;
+}
+
+.footer-promo-grid .contact-box a:hover {
+    color: var(--accent-strong, #f0cf84);
+}
+
+@media (max-width: 980px) {
+    .footer-promo-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+}
+
+@media (max-width: 720px) {
+    .footer-promo-section {
+        padding: 44px 18px 28px;
+    }
+
+    .btn,
+    a.btn,
+    button.btn,
+    .btn.cta,
+    .map-btn,
+    .review-cta,
+    .contact-primary,
+    .price-hero-actions .btn,
+    .price-cta-card .btn,
+    .hero-actions .btn.cta {
+        min-height: 42px;
+        padding: 10px 16px;
+        font-size: 0.76rem;
+    }
+}
