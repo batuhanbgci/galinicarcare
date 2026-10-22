@@ -1,4 +1,5 @@
 .contact-section{background:radial-gradient(ellipse at 10% 10%,rgba(216,180,106,.09),transparent 60%),var(--bg-deep);border-radius:0}
+.contact-section.section{padding-bottom:32px}
 .contact-intro{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center;margin:48px 0}
 .contact-eyebrow{display:block;color:var(--accent);font-size:.68rem;font-weight:600;letter-spacing:.2em;margin-bottom:18px}
 .contact-heading h1{font-size:clamp(2.6rem,4.6vw,4.5rem);line-height:1.13;letter-spacing:-.025em;margin-bottom:24px}
@@ -24,8 +25,11 @@
 .contact-section .contact-card .contact-video .video-header{text-align:left;padding-bottom:24px!important}
 .contact-section .contact-card .contact-video .video-header h3{text-align:left;font-size:clamp(1.6rem,3vw,2.5rem)!important}
 .contact-section .contact-card .contact-video .location-video{max-height:480px;border:1px solid var(--line);border-radius:12px}
-.map-section .section-title{text-align:left}
+.map-section.section{padding-top:32px}
+.map-section .section-title{text-align:left;margin-bottom:24px}
+.map-section .section-title h2::after{display:none}
 .map-section .section-title p{margin-left:0}
+@media(min-width:721px){.map-section .section-title{text-align:center}.map-section .section-title p{margin-inline:auto}}
 .map-section .map-card{padding:18px;border-radius:12px}
 .map-section .map-wrapper{border-radius:8px}
 .map-section .map-wrapper iframe{min-height:380px}
