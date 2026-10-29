@@ -13,6 +13,7 @@
 
         initScrollProgress();
         initScrollReveal();
+        initHeroVideo();
 
         if (!prefersReducedMotion) {
             initCardSpotlightAndTilt();
@@ -51,6 +52,37 @@
         }, { passive: true });
 
         updateProgress();
+    }
+
+    /** Keep the poster as the first paint; fetch the large hero video after the page settles. */
+    function initHeroVideo() {
+        const video = document.querySelector('.slider-video');
+        const source = video && video.querySelector('source[data-src]');
+        if (!video || !source || prefersReducedMotion) return;
+
+        const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+        if (connection && (connection.saveData || /(^|-)2g$/.test(connection.effectiveType || ''))) return;
+        if (window.matchMedia('(max-width: 760px)').matches) return;
+
+        const startLoading = function () {
+            if (source.src) return;
+            source.src = source.dataset.src;
+            source.removeAttribute('data-src');
+            video.load();
+            const playPromise = video.play();
+            if (playPromise && typeof playPromise.catch === 'function') playPromise.catch(function () {});
+        };
+
+        const afterPageLoad = function () {
+            if ('requestIdleCallback' in window) {
+                window.requestIdleCallback(startLoading, { timeout: 2500 });
+            } else {
+                window.setTimeout(startLoading, 1200);
+            }
+        };
+
+        if (document.readyState === 'complete') afterPageLoad();
+        else window.addEventListener('load', afterPageLoad, { once: true });
     }
 
     /**
@@ -264,6 +296,7 @@
 
         if (!('IntersectionObserver' in window)) {
             videos.forEach(function (v) {
+                loadDeferredVideo(v);
                 v.muted = true;
                 const p = v.play();
                 if (p && typeof p.catch === 'function') p.catch(function () {});
@@ -275,6 +308,7 @@
             entries.forEach(function (entry) {
                 const video = entry.target;
                 if (entry.isIntersecting) {
+                    loadDeferredVideo(video);
                     video.muted = true;
                     const playPromise = video.play();
                     if (playPromise && typeof playPromise.catch === 'function') {
@@ -289,5 +323,16 @@
         videos.forEach(function (v) {
             videoObserver.observe(v);
         });
+    }
+
+    function loadDeferredVideo(video) {
+        const deferredSources = video.querySelectorAll('source[data-src]');
+        if (!deferredSources.length) return;
+
+        deferredSources.forEach(function (source) {
+            source.src = source.dataset.src;
+            source.removeAttribute('data-src');
+        });
+        video.load();
     }
 })();

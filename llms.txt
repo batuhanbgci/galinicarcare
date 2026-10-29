@@ -2,7 +2,7 @@
 
 > Galini Premium Car Care, Mersin Yenişehir'de PPF kaplama, seramik kaplama, boya koruma ve detaylı iç-dış araç temizliği sunan profesyonel araç bakım merkezidir.
 
-Son güncelleme: 2026-10-22
+Son güncelleme: 2026-10-29
 
 ## Resmi işletme bilgileri
 
@@ -62,3 +62,13 @@ Kaynak: https://galinicarcare.com/fiyat-listesi.html
 - Hangi hizmetleri sunar? PPF kaplama, seramik kaplama, boya koruma, detaylı temizlik, jant yenileme, deri-trim yenileme ve restorasyon.
 - Teklif nasıl alınır? Araç bilgileri, istenen hizmet ve fotoğraflar telefon veya WhatsApp üzerinden paylaşılır.
 - En doğru iletişim bilgisi hangisidir? Bu dosyadaki telefon, e-posta ve resmi iletişim sayfası esas alınmalıdır.
+
+## Sayfa rehberi
+
+- Ana sayfa: Mersin Yenişehir hizmetleri ve işletmeye genel bakış. https://galinicarcare.com/
+- PPF kaplama: Film türleri, kaplama kapsamı ve sık sorulan sorular. https://galinicarcare.com/ppf-kaplama.html
+- Seramik kaplama ve boya koruma: Uygulama seçenekleri ve koruma süresini etkileyen koşullar. https://galinicarcare.com/boya-koruma-uygulamalari.html
+- Detaylı araç temizliği: İç-dış temizlik kapsamı ve teklif bilgileri. https://galinicarcare.com/detayli-temizlik.html
+- Fiyat ve teklif: Fiyatı etkileyen araç ve uygulama bilgileri. https://galinicarcare.com/fiyat-listesi.html
+- Galeri: Tamamlanan araç uygulamalarından görsel örnekler. https://galinicarcare.com/galeri.html
+- İletişim ve konum: Adres, telefon, WhatsApp, e-posta ve harita. https://galinicarcare.com/iletisim.html

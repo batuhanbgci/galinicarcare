@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="css/slider.css?v=20260930-scroll-fix">
     <link rel="stylesheet" href="css/common-footer.css?v=20261015-mobile-close-position">
     <link rel="stylesheet" href="css/theme.css?v=20261014-navbar-no-underline">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
     <title>Mersin PPF Kaplama & Araç Bakım | Galini Premium</title>
     <meta name="description" content="Mersin Yenişehir'de PPF kaplama, seramik kaplama, boya koruma ve detaylı araç temizliği. Galini Premium Car Care'den hızlı teklif alın.">
@@ -38,7 +40,7 @@
       "@context": "https://schema.org",
       "@graph": [
         {
-          "@type": "AutoWash",
+          "@type": "AutomotiveBusiness",
           "@id": "https://galinicarcare.com/#business",
           "name": "Galini Premium Car Care",
           "alternateName": "Galini Detailing",
@@ -173,8 +175,8 @@
             <div class="slider-wrapper">
                 <div class="slides">
                     <div class="slide active video-slide" aria-hidden="false">
-                        <video class="slider-video" autoplay muted playsinline loop poster="img/1.jpeg">
-                            <source src="img/Adsız tasarım.mp4" type="video/mp4">
+                        <video class="slider-video" autoplay muted playsinline loop preload="none" poster="img/1.jpeg">
+                            <source data-src="img/Adsız tasarım.mp4" type="video/mp4">
                             Tarayıcınız video etiketini desteklemiyor.
                         </video>
                         <div class="overlay"></div>
@@ -187,7 +189,7 @@
                     </div>
 
                     <div class="slide" aria-hidden="true">
-                        <img src="img/1.jpeg" alt="Profesyonel Araç Bakımı">
+                        <img src="img/1.jpeg" alt="Profesyonel Araç Bakımı" loading="lazy" decoding="async">
                         <div class="overlay"></div>
                         <div class="slide-content">
                             <h2>Profesyonel Araç Bakımı</h2>
@@ -197,7 +199,7 @@
                     </div>
 
                     <div class="slide" aria-hidden="true">
-                        <img src="img/seramik-kaplama.jpg" alt="Seramik Kaplama">
+                        <img src="img/seramik-kaplama.jpg" alt="Seramik Kaplama" loading="lazy" decoding="async">
                         <div class="overlay"></div>
                         <div class="slide-content">
                             <h2>Uzun Süreli Koruma</h2>
@@ -207,7 +209,7 @@
                     </div>
 
                     <div class="slide" aria-hidden="true">
-                        <img src="img/3.jpeg" alt="Detaylı Temizlik">
+                        <img src="img/3.jpeg" alt="Detaylı Temizlik" loading="lazy" decoding="async">
                         <div class="overlay"></div>
                         <div class="slide-content">
                             <h2>Detaylı İç &amp; Dış Temizlik</h2>
@@ -217,7 +219,7 @@
                     </div>
 
                     <div class="slide" aria-hidden="true">
-                        <img src="img/4.jpeg" alt="Boyasız Göçük Onarımı">
+                        <img src="img/4.jpeg" alt="Boyasız Göçük Onarımı" loading="lazy" decoding="async">
                         <div class="overlay"></div>
                         <div class="slide-content">
                             <h2>Profesyonel Onarım</h2>
@@ -227,7 +229,7 @@
                     </div>
 
                     <div class="slide" aria-hidden="true">
-                        <img src="img/5.jpeg" alt="Parlaklık ve Koruma">
+                        <img src="img/5.jpeg" alt="Parlaklık ve Koruma" loading="lazy" decoding="async">
                         <div class="overlay"></div>
                         <div class="slide-content">
                             <h2>Parlaklık &amp; Koruma</h2>
@@ -251,17 +253,17 @@
                     <p>İç ve dış yüzeyler için profesyonel koruma ve yenileme.</p>
                 </div>
                 <div class="services-grid">
-                    <article class="service-card service-card-visual"><div class="service-visual"><video class="service-video" autoplay muted loop playsinline preload="metadata" poster="img/1.jpeg"><source src="img/ppfkaplamavideo.mp4" type="video/mp4"></video><span class="service-number">01</span></div>
+                    <article class="service-card service-card-visual"><div class="service-visual"><video class="service-video" autoplay muted loop playsinline preload="none" poster="img/1.jpeg"><source data-src="img/ppfkaplamavideo.mp4" type="video/mp4"></video><span class="service-number">01</span></div>
                         <h3>PPF Kaplama</h3>
                         <p>Taş izi, çizik ve dış etkenlere karşı şeffaf yüzey koruması.</p>
                         <a class="service-card-link" href="ppf-kaplama.html">Detayları incele</a>
                     </article>
-                    <article class="service-card service-card-visual"><div class="service-visual"><video class="service-video" autoplay muted loop playsinline preload="metadata" poster="img/seramik-kaplama.jpg"><source src="img/Mini/mini4.mp4" type="video/mp4"></video><span class="service-number">02</span></div>
+                    <article class="service-card service-card-visual"><div class="service-visual"><video class="service-video" autoplay muted loop playsinline preload="none" poster="img/seramik-kaplama.jpg"><source data-src="img/Mini/mini4.mp4" type="video/mp4"></video><span class="service-number">02</span></div>
                         <h3>Seramik Kaplama</h3>
                         <p>Derin parlaklık, su iticilik ve uzun ömürlü boya koruması.</p>
                         <a class="service-card-link" href="boya-koruma-uygulamalari.html">Detayları incele</a>
                     </article>
-                    <article class="service-card service-card-visual"><div class="service-visual"><video class="service-video" autoplay muted loop playsinline preload="metadata" poster="img/3.jpeg"><source src="img/detaytemizlikvideo.mp4" type="video/mp4"></video><span class="service-number">03</span></div>
+                    <article class="service-card service-card-visual"><div class="service-visual"><video class="service-video" autoplay muted loop playsinline preload="none" poster="img/3.jpeg"><source data-src="img/detaytemizlikvideo.mp4" type="video/mp4"></video><span class="service-number">03</span></div>
                         <h3>Detaylı Temizlik</h3>
                         <p>İç ve dış mekanda en ince detaya inen hijyen ve yenileme.</p>
                         <a class="service-card-link" href="detayli-temizlik.html">Detayları incele</a>

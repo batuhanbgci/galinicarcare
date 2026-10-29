@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const slide = video.closest('.gallery-slide');
 
             video.controls = true;
-            video.preload = 'metadata';
+            video.preload = 'none';
             video.setAttribute('playsinline', '');
             video.setAttribute('webkit-playsinline', '');
             video.setAttribute('x5-playsinline', '');
@@ -149,6 +149,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
             slides.forEach((slide, slideIndex) => {
                 slide.classList.toggle('active', slideIndex === currentSlide);
+                const image = slide.querySelector('img');
+                if (image) {
+                    image.loading = slideIndex === currentSlide ? 'eager' : 'lazy';
+                    image.decoding = 'async';
+                }
             });
 
             const activeSlide = slides[currentSlide];
