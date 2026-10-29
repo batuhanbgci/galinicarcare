@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const slide = video.closest('.gallery-slide');
 
             video.controls = true;
-            video.preload = 'none';
+            video.preload = 'metadata';
             video.setAttribute('playsinline', '');
             video.setAttribute('webkit-playsinline', '');
             video.setAttribute('x5-playsinline', '');
