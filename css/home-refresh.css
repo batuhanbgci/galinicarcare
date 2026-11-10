@@ -46,12 +46,22 @@
 
 .hero .video-slide .slide-content {
     left: 7%;
-    bottom: 17%;
+    top: 10%;
+    bottom: 12%;
     width: min(680px, 75%);
     max-width: 680px;
     transform: none;
     align-items: flex-start;
     text-align: left;
+    pointer-events: none;
+}
+
+.hero .video-slide .slide-content > * {
+    pointer-events: auto;
+}
+
+.hero .video-slide .slide-content .hero-actions {
+    margin-top: auto;
 }
 
 .hero-eyebrow,
@@ -64,6 +74,19 @@
     font-weight: 600;
     letter-spacing: .2em;
     margin-bottom: 20px;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+}
+
+.hero-actions .btn.cta span,
+.hero-secondary span {
+    margin-bottom: 0;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+    font-size: inherit;
+    letter-spacing: normal;
 }
 
 .hero-eyebrow::before,
@@ -730,35 +753,48 @@ a:focus-visible {
 
 @media (max-width: 720px) {
     .hero .video-slide .slider-video {
-        object-position: center top;
+        object-position: center center;
     }
 
     .hero .video-slide .slide-content {
-        left: 24px;
-        bottom: 78px;
-        width: calc(100% - 48px);
-        max-width: 540px;
+        left: 20px;
+        top: 38px;
+        bottom: 84px;
+        width: calc(100% - 40px);
+        max-width: 440px;
     }
 
     .hero .video-slide .slide-content .video-tagline {
-        font-size: clamp(1.9rem, 7.2vw, 3.1rem);
-        line-height: 1.05;
-        margin-bottom: 16px;
+        font-size: clamp(1.3rem, 5.2vw, 1.85rem);
+        line-height: 1.12;
+        margin-bottom: 10px;
     }
 
     .hero .video-slide .slide-content p {
-        font-size: .81rem;
-        line-height: 1.5;
-        margin-bottom: 18px;
+        font-size: .78rem;
+        line-height: 1.45;
+        margin-bottom: 14px;
     }
 
     .hero-eyebrow {
-        font-size: .58rem;
-        margin-bottom: 12px;
+        font-size: .56rem;
+        margin-bottom: 8px;
     }
 
     .hero-actions {
-        gap: 12px 20px;
+        gap: 10px 16px;
+    }
+
+    .hero-actions .btn.cta {
+        min-height: 38px;
+        padding: 8px 16px;
+        gap: 10px;
+        font-size: .74rem;
+    }
+
+    .hero-secondary {
+        font-size: .74rem;
+        padding: 8px 0;
     }
 
     .hero .slider-nav {
