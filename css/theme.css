@@ -194,6 +194,7 @@ nav a.active::after {
 }
 
 .mobile-menu-toggle {
+    position: relative;
     display: none;
     width: 40px;
     height: 40px;
@@ -208,13 +209,29 @@ nav a.active::after {
 }
 
 .mobile-menu-toggle span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
     display: block;
     width: 18px;
     height: 2px;
-    margin: 3px 0;
+    margin: 0;
     border-radius: 999px;
     background: var(--text);
-    transition: transform 0.2s ease, opacity 0.2s ease;
+    transform-origin: center;
+    transition: transform 0.22s ease, opacity 0.2s ease;
+}
+
+.mobile-menu-toggle span:nth-child(1) {
+    transform: translate(-50%, calc(-50% - 5px));
+}
+
+.mobile-menu-toggle span:nth-child(2) {
+    transform: translate(-50%, -50%);
+}
+
+.mobile-menu-toggle span:nth-child(3) {
+    transform: translate(-50%, calc(-50% + 5px));
 }
 
 .mobile-menu-toggle:hover,
@@ -1130,15 +1147,16 @@ main > .section:not(.hero):not(.footer-promo-section) {
     }
 
     .navbar.nav-open .mobile-menu-toggle span:nth-child(1) {
-        transform: translateY(5px) rotate(45deg);
+        transform: translate(-50%, -50%) rotate(45deg);
     }
 
     .navbar.nav-open .mobile-menu-toggle span:nth-child(2) {
         opacity: 0;
+        transform: translate(-50%, -50%) scaleX(0);
     }
 
     .navbar.nav-open .mobile-menu-toggle span:nth-child(3) {
-        transform: translateY(-5px) rotate(-45deg);
+        transform: translate(-50%, -50%) rotate(-45deg);
     }
 
     .navbar.nav-open .mobile-menu-toggle {

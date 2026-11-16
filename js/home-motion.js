@@ -13,6 +13,7 @@
 
         initScrollProgress();
         initScrollReveal();
+        initHomeFaqAccordion();
 
         if (!prefersReducedMotion) {
             initCardSpotlightAndTilt();
@@ -64,8 +65,8 @@
 
             // Homepage
             { selector: '.services-grid .service-card', effect: 'reveal-up', stagger: 95 },
-            { selector: '.process-intro', effect: 'reveal-up', stagger: 0 },
-            { selector: '.process-grid article', effect: 'reveal-step', stagger: 130 },
+            { selector: '.home-faq-intro', effect: 'reveal-up', stagger: 0 },
+            { selector: '.home-faq-list .home-faq-item', effect: 'reveal-up', stagger: 70 },
             { selector: '.google-reviews-card', effect: 'reveal-scale', stagger: 0 },
 
             // Gallery Page
@@ -288,6 +289,27 @@
 
         videos.forEach(function (v) {
             videoObserver.observe(v);
+        });
+    }
+
+    /**
+     * Accordion behavior for homepage FAQ (<details class="home-faq-item">):
+     * opening one item closes any other open item in the list.
+     */
+    function initHomeFaqAccordion() {
+        const faqItems = document.querySelectorAll('.home-faq-list .home-faq-item');
+        if (!faqItems.length) return;
+
+        faqItems.forEach(function (item) {
+            item.addEventListener('toggle', function () {
+                if (item.open) {
+                    faqItems.forEach(function (other) {
+                        if (other !== item && other.open) {
+                            other.open = false;
+                        }
+                    });
+                }
+            });
         });
     }
 
