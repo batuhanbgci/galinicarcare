@@ -563,9 +563,11 @@ document.addEventListener('DOMContentLoaded', function () {
         bodyEl.appendChild(optionsGrid);
 
         scrollToLatest(assistantMsg);
-        window.requestAnimationFrame(function () {
-            composerInput.focus();
-        });
+        if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+            window.requestAnimationFrame(function () {
+                composerInput.focus();
+            });
+        }
     }
 
     // STEP 4: Vehicle Provided or Skipped -> Show Ready Summary & WhatsApp Action
@@ -691,6 +693,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         modal.classList.add('is-open');
         modal.setAttribute('aria-hidden', 'false');
+        document.documentElement.classList.add('whatsapp-modal-open');
         document.body.classList.add('whatsapp-modal-open');
         whatsappBtns.forEach(function (btn) {
             btn.classList.add('assistant-open');
@@ -702,7 +705,11 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!modal.classList.contains('is-open')) return;
         modal.classList.remove('is-open');
         modal.setAttribute('aria-hidden', 'true');
+        document.documentElement.classList.remove('whatsapp-modal-open');
         document.body.classList.remove('whatsapp-modal-open');
+        if (document.activeElement === composerInput) {
+            composerInput.blur();
+        }
         whatsappBtns.forEach(function (btn) {
             btn.classList.remove('assistant-open');
         });
@@ -800,6 +807,38 @@ document.addEventListener('DOMContentLoaded', function () {
         const detectedCatKey = detectCategoryKeyFromText(val);
         selectCategory(detectedCatKey, val);
     });
+
+    let touchStartY = 0;
+
+    modal.addEventListener('touchstart', function (event) {
+        if (event.touches.length === 1) {
+            touchStartY = event.touches[0].clientY;
+        }
+    }, { passive: true });
+
+    modal.addEventListener('touchmove', function (event) {
+        if (!modal.classList.contains('is-open') || event.touches.length !== 1) return;
+
+        const targetInBody = event.target instanceof Element && bodyEl.contains(event.target);
+        if (!targetInBody) {
+            if (event.cancelable) event.preventDefault();
+            return;
+        }
+
+        const currentY = event.touches[0].clientY;
+        const deltaY = currentY - touchStartY;
+        const scrollTop = bodyEl.scrollTop;
+        const maxScroll = bodyEl.scrollHeight - bodyEl.clientHeight;
+
+        if (maxScroll <= 0) {
+            if (event.cancelable) event.preventDefault();
+            return;
+        }
+
+        if ((scrollTop <= 0 && deltaY > 0) || (scrollTop >= maxScroll - 1 && deltaY < 0)) {
+            if (event.cancelable) event.preventDefault();
+        }
+    }, { passive: false });
 
     modal.addEventListener('click', function (event) {
         if (event.target === modal) {

@@ -192,6 +192,12 @@
    Galini Mersin Asistanı — Tıklamalı İnteraktif WhatsApp Widget
    ========================================================================== */
 
+html.whatsapp-modal-open,
+body.whatsapp-modal-open {
+    overflow: hidden !important;
+    overscroll-behavior: none !important;
+}
+
 .wa-assistant-backdrop {
     position: fixed;
     inset: 0;
@@ -200,6 +206,8 @@
     background: transparent;
     opacity: 0;
     visibility: hidden;
+    overscroll-behavior: contain;
+    touch-action: none;
     transition: opacity 0.22s ease, visibility 0.22s ease;
 }
 
@@ -347,6 +355,10 @@
 .wa-assistant-body {
     flex: 1 1 auto;
     overflow-y: auto;
+    overflow-x: hidden;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
     padding: 16px;
     display: flex;
     flex-direction: column;
@@ -547,14 +559,16 @@
     background: transparent;
     color: #f3f5f8;
     font-family: 'Montserrat', Arial, sans-serif;
-    font-size: 0.84rem;
+    font-size: 16px;
     line-height: 1.4;
     padding: 6px 2px;
     outline: none;
+    touch-action: manipulation;
 }
 
 .wa-assistant-input::placeholder {
     color: #6f7785;
+    font-size: 0.84rem;
 }
 
 .wa-assistant-send {
