@@ -6,6 +6,7 @@ const htmlPages = {
   main: resolve(import.meta.dirname, 'index.html'),
   galeri: resolve(import.meta.dirname, 'galeri.html'),
   boyaKoruma: resolve(import.meta.dirname, 'boya-koruma-uygulamalari.html'),
+  pastaCila: resolve(import.meta.dirname, 'pasta-cila.html'),
   detayliTemizlik: resolve(import.meta.dirname, 'detayli-temizlik.html'),
   ppfKaplama: resolve(import.meta.dirname, 'ppf-kaplama.html'),
   malzemeler: resolve(import.meta.dirname, 'malzemeler.html'),

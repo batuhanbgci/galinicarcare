@@ -324,6 +324,13 @@
     transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+.material-card-visual img.material-img.material-img-wide {
+    width: 92%;
+    max-width: 440px;
+    height: auto;
+    max-height: 165px;
+}
+
 .material-card-visual.visual-framed img.material-img {
     height: 215px;
     border-radius: 10px;
@@ -385,6 +392,92 @@
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
+}
+
+/* Warranty & Option Badges (7 Yıl vs 10 Yıl visual distinction) */
+.material-warranty-badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    backdrop-filter: blur(8px);
+}
+
+.material-warranty-badge.warranty-7y {
+    border: 1px solid rgba(215, 219, 227, 0.38);
+    background: rgba(23, 26, 32, 0.9);
+    color: #e5e9f0;
+}
+
+.material-warranty-badge.warranty-10y {
+    border: 1px solid rgba(240, 207, 132, 0.75);
+    background: linear-gradient(135deg, rgba(216, 180, 106, 0.28), rgba(17, 19, 24, 0.92));
+    color: var(--accent-strong, #f0cf84);
+    box-shadow: 0 4px 16px rgba(216, 180, 106, 0.2);
+}
+
+.material-card.material-card-7y {
+    border-color: rgba(215, 219, 227, 0.16);
+}
+
+.material-card.material-card-10y {
+    border-color: rgba(216, 180, 106, 0.36);
+    background:
+        linear-gradient(180deg, rgba(216, 180, 106, 0.07) 0%, rgba(216, 180, 106, 0) 42%),
+        var(--surface, #111318);
+}
+
+.material-card.material-card-10y .material-placeholder {
+    border-color: rgba(240, 207, 132, 0.45);
+    background: radial-gradient(circle at 50% 40%, rgba(216, 180, 106, 0.1), rgba(255, 255, 255, 0.015) 70%);
+}
+
+.material-card.material-card-10y .material-placeholder-icon {
+    width: 52px;
+    height: 52px;
+    border-color: rgba(240, 207, 132, 0.65);
+    background: rgba(216, 180, 106, 0.2);
+    color: #fff4d8;
+    box-shadow: 0 0 18px rgba(216, 180, 106, 0.22);
+}
+
+.material-card.material-card-7y .material-placeholder-icon {
+    width: 52px;
+    height: 52px;
+    border-color: rgba(215, 219, 227, 0.4);
+    background: rgba(255, 255, 255, 0.06);
+    color: #e5e9f0;
+}
+
+.material-warranty-pill {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.material-warranty-pill.pill-7y {
+    border: 1px solid rgba(215, 219, 227, 0.28);
+    background: rgba(255, 255, 255, 0.05);
+    color: #f6f7f9;
+}
+
+.material-warranty-pill.pill-10y {
+    border: 1px solid rgba(240, 207, 132, 0.48);
+    background: rgba(216, 180, 106, 0.14);
+    color: var(--accent-strong, #f0cf84);
 }
 
 /* Fallback Placeholder if an image is missing or fails to load */

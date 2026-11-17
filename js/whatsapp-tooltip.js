@@ -74,12 +74,12 @@ document.addEventListener('DOMContentLoaded', function () {
             ]
         },
         polish: {
-            title: 'Boya Düzeltme',
-            shortDesc: 'Koruma öncesi kusursuz yüzey için profesyonel pasta/polisaj.',
-            intro: 'Kılcal çizikleri, fırça izlerini ve matlaşmayı vernik kalınlığını ölçerek gideren profesyonel pasta/polisaj.',
+            title: 'Pasta Cila & Boya Düzeltme',
+            shortDesc: 'Kılcal çizik, hare ve matlaşmayı gideren çok aşamalı polisaj ve cila.',
+            intro: 'Kılcal çizikleri, fırça izlerini ve matlaşmayı vernik kalınlığını ölçerek gideren profesyonel pasta cila ve boya düzeltme.',
             question: 'Aracınızın durumu için hangisi uygun?',
-            pageUrl: 'boya-koruma-uygulamalari.html',
-            pageLabel: 'BOYA KORUMA SAYFASI',
+            pageUrl: 'pasta-cila.html',
+            pageLabel: 'PASTA CİLA SAYFASI',
             vehicleHint: 'Bu bilgi teklifi hızlandırır — vernik ve boya tipine göre aşama planlanır.',
             options: [
                 {
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 {
                     id: 'polish-gloss',
                     title: 'Parlaklık yenileme & boya koruma',
-                    subtitle: 'Hafif hare giderme ve koruyucu katman'
+                    subtitle: 'Hafif hare giderme ve koruyucu cila'
                 },
                 {
                     id: 'polish-headlight',
@@ -177,8 +177,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 },
                 {
                     id: 'quote-ceramic',
-                    title: 'Seramik Kaplama & Boya Düzeltme',
-                    subtitle: 'Polisaj ve nano-seramik koruma paketleri'
+                    title: 'Seramik Kaplama & Pasta Cila',
+                    subtitle: 'Polisaj, cila ve nano-seramik koruma paketleri'
                 },
                 {
                     id: 'quote-clean',
@@ -677,14 +677,14 @@ document.addEventListener('DOMContentLoaded', function () {
         if (q.includes('ppf') || q.includes('taş') || q.includes('tas') || q.includes('kaput') || q.includes('film') || q.includes('şeffaf') || q.includes('tpu') || q.includes('tampon')) {
             return 'ppf';
         }
+        if (q.includes('pasta') || q.includes('cila') || q.includes('polisaj') || q.includes('hare') || q.includes('çizik') || q.includes('cizik') || q.includes('boya düzeltme') || q.includes('boya duzeltme') || q.includes('matlaşma') || q.includes('matlasma') || q.includes('far')) {
+            return 'polish';
+        }
         if (q.includes('seramik') || q.includes('parlak') || q.includes('su itici') || q.includes('hidrofobik')) {
             return 'ceramic';
         }
         if (q.includes('temiz') || q.includes('koltuk') || q.includes('detay') || q.includes('kuaför') || q.includes('koku') || q.includes('ozon') || q.includes('tavan') || q.includes('motor')) {
             return 'cleaning';
-        }
-        if (q.includes('çizik') || q.includes('cizik') || q.includes('pasta') || q.includes('polisaj') || q.includes('hare') || q.includes('far')) {
-            return 'polish';
         }
         if (q.includes('jant') || q.includes('cnc') || q.includes('deri') || q.includes('direksiyon') || q.includes('trim') || q.includes('restorasyon')) {
             return 'restoration';
