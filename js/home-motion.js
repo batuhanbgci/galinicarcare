@@ -103,11 +103,11 @@
             { selector: '.contact-methods .contact-method', effect: 'reveal-up', stagger: 105 },
             { selector: '.appointment-note', effect: 'reveal-scale', stagger: 0 },
 
-            // Products Page (Ürünler)
+            // Products Page (Ürünler) — fast reveal without cumulative delay
             { selector: '.materials-hero', effect: 'reveal-up', stagger: 0 },
             { selector: '.materials-category-nav', effect: 'reveal-up', stagger: 0 },
             { selector: '.materials-category-header', effect: 'reveal-up', stagger: 0 },
-            { selector: '.materials-grid .material-card', effect: 'reveal-up', stagger: 90 },
+            { selector: '.materials-grid .material-card', effect: 'reveal-up', stagger: 40, perRow: 3 },
             { selector: '.materials-cta', effect: 'reveal-scale', stagger: 0 },
 
             // Shared Bottom Sections
@@ -119,12 +119,19 @@
 
         const allTargets = [];
 
+        const isMobileViewport = window.matchMedia('(max-width: 720px)').matches;
+
         revealConfigs.forEach(function (cfg) {
             const nodes = Array.from(document.querySelectorAll(cfg.selector));
             nodes.forEach(function (node, index) {
                 node.classList.add('reveal-item', cfg.effect);
                 if (cfg.stagger > 0) {
-                    node.style.setProperty('--reveal-delay', (index * cfg.stagger) + 'ms');
+                    const stepIndex = cfg.perRow
+                        ? (isMobileViewport ? 0 : (index % cfg.perRow))
+                        : index;
+                    if (stepIndex > 0) {
+                        node.style.setProperty('--reveal-delay', (stepIndex * cfg.stagger) + 'ms');
+                    }
                 }
                 allTargets.push(node);
             });
@@ -146,8 +153,8 @@
             });
         }, {
             root: null,
-            rootMargin: '0px 0px -6% 0px',
-            threshold: 0.1
+            rootMargin: '0px 0px 100px 0px',
+            threshold: 0.01
         });
 
         allTargets.forEach(function (el) {
