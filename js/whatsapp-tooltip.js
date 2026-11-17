@@ -193,33 +193,33 @@ document.addEventListener('DOMContentLoaded', function () {
             ]
         },
         products: {
-            title: 'Ürünler ve bakım',
-            shortDesc: 'Galini bakım, seramik ve far koruma ürünleri',
-            intro: 'PPF ve seramik kaplama sonrası koruyucu bakım, far koruma filmi, cam/jant seramiği ve deri bakım uygulamaları.',
-            question: 'Hangi ürün veya bakım uygulamasıyla ilgileniyorsunuz?',
-            pageUrl: 'boya-koruma-uygulamalari.html',
-            pageLabel: 'BAKIM & KORUMA SAYFASI',
-            vehicleHint: 'Bu bilgi teklifi hızlandırır — aracınızdaki mevcut uygulamaya göre planlanır.',
+            title: 'Ürünler',
+            shortDesc: 'Angelwax, Koch-Chemie, POLYTOP ve ADBL profesyonel bakım ürünleri.',
+            intro: 'Uygulamalarımızda araç yüzeyine uyumlu Angelwax, Koch-Chemie, POLYTOP ve ADBL profesyonel bakım, temizlik ve pasta-cila ürünleri kullanıyoruz.',
+            question: 'Hangi ürün grubumuz veya bakım uygulamamızla ilgileniyorsunuz?',
+            pageUrl: 'malzemeler.html',
+            pageLabel: 'ÜRÜNLER SAYFASI',
+            vehicleHint: 'Bu bilgi teklifi hızlandırır — aracınızdaki mevcut duruma ve yüzeye göre uygun ürün ve uygulama planlanır.',
             options: [
+                {
+                    id: 'prod-polish',
+                    title: 'Pasta & Boya Düzeltme Ürünleri',
+                    subtitle: 'Angelwax (Resurrection, Regenerate, Redemption) ve Koch-Chemie (H9.02, F6.01, M3.02)'
+                },
+                {
+                    id: 'prod-cleaning',
+                    title: 'Detaylı Temizlik & Yüzey Bakım Ürünleri',
+                    subtitle: 'Koch-Chemie (MZR, GS, PSS, TS, Pol Star) ve POLYTOP Polystar'
+                },
+                {
+                    id: 'prod-wash',
+                    title: 'Araç Yıkama & Aktif Köpük',
+                    subtitle: 'ADBL Yeti pH nötr boya koruma uyumlu yoğun aktif köpük'
+                },
                 {
                     id: 'prod-ppf-care',
                     title: 'PPF & Seramik periyodik bakım',
-                    subtitle: 'Kaplama yüzeyi arındırma ve hidrofobik yenileme'
-                },
-                {
-                    id: 'prod-headlight',
-                    title: 'Far koruma filmi (TPU PPF)',
-                    subtitle: 'Taş izi ve sararmaya karşı şeffaf far koruması'
-                },
-                {
-                    id: 'prod-screen',
-                    title: 'İç ekran & piano black koruma filmi',
-                    subtitle: 'Dokunmatik multimedya ekran ve iç trim PPF koruma'
-                },
-                {
-                    id: 'prod-leather',
-                    title: 'Deri & tekstil su itici koruma',
-                    subtitle: 'Koltuklarda leke tutmayan koruyucu katman'
+                    subtitle: 'Profesyonel ürünlerle kaplama yüzeyi arındırma ve koruma bakımı'
                 }
             ]
         },
@@ -374,9 +374,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const optionsGrid = document.createElement('div');
         optionsGrid.className = 'wa-options-grid one-col';
         optionsGrid.dataset.step = 'scope';
-        optionsGrid.innerHTML = cat.options.map(function (opt, idx) {
+        optionsGrid.innerHTML = cat.options.map(function (opt) {
             return `
-                <button type="button" class="wa-option-card full-row ${idx === 0 ? 'is-featured' : ''}" data-option-id="${opt.id}">
+                <button type="button" class="wa-option-card full-row" data-option-id="${opt.id}">
                     <span class="wa-option-title">${escapeHtml(opt.title)}</span>
                     <span class="wa-option-desc">${escapeHtml(opt.subtitle)}</span>
                 </button>
@@ -665,7 +665,13 @@ document.addEventListener('DOMContentLoaded', function () {
         if (q.includes('konum') || q.includes('adres') || q.includes('nerede') || q.includes('saat') || q.includes('açık') || q.includes('harita') || q.includes('yol tarifi')) {
             return 'location';
         }
-        if (q.includes('ürün') || q.includes('urun') || q.includes('periyodik') || q.includes('ekran')) {
+        if (
+            q.includes('ürün') || q.includes('urun') || q.includes('malzeme') ||
+            q.includes('angelwax') || q.includes('koch') || q.includes('polytop') ||
+            q.includes('polystar') || q.includes('adbl') || q.includes('yeti') ||
+            q.includes('green star') || q.includes('plast star') || q.includes('top star') ||
+            q.includes('pol star') || q.includes('mzr') || q.includes('periyodik') || q.includes('ekran')
+        ) {
             return 'products';
         }
         if (q.includes('ppf') || q.includes('taş') || q.includes('tas') || q.includes('kaput') || q.includes('film') || q.includes('şeffaf') || q.includes('tpu') || q.includes('tampon')) {

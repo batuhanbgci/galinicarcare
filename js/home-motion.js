@@ -14,6 +14,8 @@
         initScrollProgress();
         initScrollReveal();
         initHomeFaqAccordion();
+        initMaterialImageFallbacks();
+        initInlineVideoPlayers();
 
         if (!prefersReducedMotion) {
             initCardSpotlightAndTilt();
@@ -100,6 +102,13 @@
             { selector: '.contact-heading', effect: 'reveal-up', stagger: 0 },
             { selector: '.contact-methods .contact-method', effect: 'reveal-up', stagger: 105 },
             { selector: '.appointment-note', effect: 'reveal-scale', stagger: 0 },
+
+            // Products Page (Ürünler)
+            { selector: '.materials-hero', effect: 'reveal-up', stagger: 0 },
+            { selector: '.materials-category-nav', effect: 'reveal-up', stagger: 0 },
+            { selector: '.materials-category-header', effect: 'reveal-up', stagger: 0 },
+            { selector: '.materials-grid .material-card', effect: 'reveal-up', stagger: 90 },
+            { selector: '.materials-cta', effect: 'reveal-scale', stagger: 0 },
 
             // Shared Bottom Sections
             { selector: '.faq-grid .faq-item', effect: 'reveal-up', stagger: 100 },
@@ -309,6 +318,84 @@
                         }
                     });
                 }
+            });
+        });
+    }
+
+    /**
+     * Graceful placeholder fallback for product images on malzemeler.html
+     */
+    function initMaterialImageFallbacks() {
+        const visuals = document.querySelectorAll('.material-card-visual');
+        if (!visuals.length) return;
+
+        visuals.forEach(function (visual) {
+            const imgs = Array.from(visual.querySelectorAll('img.material-img'));
+            if (!imgs.length) {
+                visual.classList.add('is-placeholder');
+                return;
+            }
+
+            imgs.forEach(function (img) {
+                if (!img.getAttribute('src')) {
+                    visual.classList.add('is-placeholder');
+                    return;
+                }
+                img.addEventListener('error', function () {
+                    visual.classList.add('is-placeholder');
+                });
+                if (img.complete && img.naturalWidth === 0) {
+                    visual.classList.add('is-placeholder');
+                }
+            });
+        });
+    }
+
+    /**
+     * Ensures inline controlled videos (PPF, Detaylı Temizlik, İletişim) display
+     * their video cover clearly on mobile with a centered play button overlay.
+     */
+    function initInlineVideoPlayers() {
+        const wrappers = document.querySelectorAll('.video-wrapper');
+        if (!wrappers.length) return;
+
+        wrappers.forEach(function (wrapper) {
+            const video = wrapper.querySelector('video');
+            if (!video) return;
+
+            video.setAttribute('playsinline', '');
+            video.setAttribute('webkit-playsinline', '');
+            video.setAttribute('x5-playsinline', '');
+
+            if (!wrapper.querySelector('.inline-video-play')) {
+                const playBtn = document.createElement('button');
+                playBtn.type = 'button';
+                playBtn.className = 'inline-video-play';
+                playBtn.setAttribute('aria-label', 'Videoyu oynat');
+
+                const startPlay = function (event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    const p = video.play();
+                    if (p && typeof p.catch === 'function') {
+                        p.catch(function () {});
+                    }
+                };
+
+                playBtn.addEventListener('click', startPlay);
+                wrapper.appendChild(playBtn);
+            }
+
+            video.addEventListener('play', function () {
+                wrapper.classList.add('is-playing');
+            });
+
+            video.addEventListener('pause', function () {
+                wrapper.classList.remove('is-playing');
+            });
+
+            video.addEventListener('ended', function () {
+                wrapper.classList.remove('is-playing');
             });
         });
     }

@@ -8,6 +8,7 @@ const htmlPages = {
   boyaKoruma: resolve(import.meta.dirname, 'boya-koruma-uygulamalari.html'),
   detayliTemizlik: resolve(import.meta.dirname, 'detayli-temizlik.html'),
   ppfKaplama: resolve(import.meta.dirname, 'ppf-kaplama.html'),
+  malzemeler: resolve(import.meta.dirname, 'malzemeler.html'),
   hakkimizda: resolve(import.meta.dirname, 'hakkimizda.html'),
   fiyatListesi: resolve(import.meta.dirname, 'fiyat-listesi.html'),
   iletisim: resolve(import.meta.dirname, 'iletisim.html'),
