@@ -38,6 +38,15 @@
         max-height: 320px;
     }
 
+    .nav-links > li > a {
+        font-size: 0.92rem;
+    }
+
+    .dropdown-menu li a {
+        padding: 8px 12px 8px 18px;
+        font-size: 0.78rem;
+    }
+
     .navbar.nav-open .mobile-menu-toggle span:nth-child(1) {
         transform: translate(-50%, -50%) rotate(45deg);
     }
@@ -63,6 +72,18 @@
 
     .mobile-menu-toggle span:nth-child(3) {
         transform: translate(-50%, calc(-50% + 4px));
+    }
+}
+
+@media (max-width: 360px) {
+    .nav-links > li > a {
+        padding: 8px 10px;
+        font-size: 0.82rem;
+    }
+
+    .dropdown-menu li a {
+        padding: 7px 10px 7px 16px;
+        font-size: 0.72rem;
     }
 }
 

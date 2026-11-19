@@ -12,12 +12,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const categories = {
         ppf: {
-            title: 'Boya Koruma Filmi',
+            title: 'PPF Kaplama',
             shortDesc: 'Taş izi, çizik ve çevresel etkilere karşı kendini onaran şeffaf film.',
             intro: 'Taş izi, çizik ve çevresel etkilere karşı kendini onaran %100 TPU şeffaf film.',
             question: 'Hangi kapsamı düşünüyorsunuz?',
             pageUrl: 'ppf-kaplama.html',
-            pageLabel: 'BOYA KORUMA FİLMİ SAYFASI',
+            pageLabel: 'PPF KAPLAMA SAYFASI',
             vehicleHint: 'Bu bilgi teklifi hızlandırır — kesim şablonu araca özel hazırlanır.',
             options: [
                 {
@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', function () {
             options: [
                 {
                     id: 'quote-ppf',
-                    title: 'Boya Koruma Filmi (PPF)',
+                    title: 'PPF Kaplama',
                     subtitle: 'Tam araç veya bölgesel şeffaf koruma filmi'
                 },
                 {
@@ -233,8 +233,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
-    const DEFAULT_PLACEHOLDER = 'İhtiyacınızı yazın... (örn. kaputta taş izi var)';
-    const VEHICLE_PLACEHOLDER = 'Örn. BMW 320i 2021';
+    const DEFAULT_PLACEHOLDER = 'Buraya kendi cümlenizle de yazabilirsiniz...';
+    const VEHICLE_PLACEHOLDER = 'Buraya yazın: Örn. 2022 BMW 320i';
 
     const modal = document.createElement('div');
     modal.className = 'wa-assistant-backdrop';
@@ -253,7 +253,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     </div>
                     <div class="wa-assistant-titles">
                         <h2 id="waAssistantTitle">Galini Mersin Asistanı</h2>
-                        <p>Seçin ya da yazın — çözümü birlikte bulalım</p>
+                        <p id="waAssistantSubtitle">1/4 · Aşağıdan bir hizmet seçin 👇</p>
                     </div>
                 </div>
                 <div class="wa-assistant-header-actions">
@@ -288,6 +288,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.body.appendChild(modal);
 
     const bodyEl = modal.querySelector('#waAssistantBody');
+    const subtitleEl = modal.querySelector('#waAssistantSubtitle');
     const backBtn = modal.querySelector('.wa-assistant-back');
     const closeBtn = modal.querySelector('.wa-assistant-close');
     const composerForm = modal.querySelector('.wa-assistant-composer');
@@ -319,6 +320,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function updateBackButtonVisibility() {
         backBtn.hidden = state.stage === 'home';
+        if (subtitleEl) {
+            const stageLabels = {
+                home: '1/4 · Aşağıdan bir kutuya tıklayın 👇',
+                scope: '2/4 · Size uygun seçeneğe tıklayın 👇',
+                vehicle: '3/4 · En alta aracınızı yazıp → basın',
+                ready: '4/4 · Yeşil WhatsApp butonuna tıklayın 👇'
+            };
+            subtitleEl.textContent = stageLabels[state.stage] || stageLabels.home;
+        }
+        composerForm.classList.toggle('is-guided', state.stage === 'vehicle');
     }
 
     function scrollToLatest(element) {
@@ -395,10 +406,10 @@ document.addEventListener('DOMContentLoaded', function () {
         optionsGrid.dataset.step = 'vehicle';
         optionsGrid.innerHTML = `
             <button type="button" class="wa-option-card full-row wa-compact-card" data-action="skip-vehicle">
-                <span class="wa-option-title">Şimdilik geçelim</span>
+                <span class="wa-option-title">Araç bilgisi vermeden devam et &#8594;</span>
             </button>
             <button type="button" class="wa-option-card full-row wa-compact-card wa-back-card" data-action="prev-menu">
-                <span class="wa-option-title">&#8592; Önceki menü</span>
+                <span class="wa-option-title">&#8592; Önceki menüye dön</span>
             </button>
         `;
         return optionsGrid;
@@ -431,8 +442,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
         bodyEl.innerHTML = `
             <div class="wa-assistant-bubble" data-step="home">
-                <p><strong>Merhaba! Size uygun çözümü birlikte bulalım.</strong></p>
-                <p>Aşağıdan seçin ya da ihtiyacınızı kendi cümlenizle yazın.</p>
+                <span class="wa-step-pill">1. ADIM · HİZMET SEÇİN</span>
+                <p><strong>Merhaba! Hoş geldiniz.</strong></p>
+                <p>Başlamak için <strong>aşağıdaki kutulardan birine tıklayın</strong> 👇 (İsterseniz en alttaki kutuya yazabilirsiniz)</p>
             </div>
             <div class="wa-options-grid two-col" data-step="home">
                 ${cardsHtml}
@@ -520,8 +532,9 @@ document.addEventListener('DOMContentLoaded', function () {
         assistantMsg.className = 'wa-assistant-bubble';
         assistantMsg.dataset.step = 'scope';
         assistantMsg.innerHTML = `
+            <span class="wa-step-pill">2. ADIM · KAPSAM SEÇİN</span>
             <p><strong>${escapeHtml(cat.intro)}</strong></p>
-            <p><strong>${escapeHtml(cat.question)}</strong></p>
+            <p><strong>${escapeHtml(cat.question)}</strong> Aşağıdan birine tıklayın 👇</p>
             <a class="wa-page-link" href="${escapeHtml(cat.pageUrl)}">${escapeHtml(cat.pageLabel)}</a>
         `;
         bodyEl.appendChild(assistantMsg);
@@ -554,8 +567,9 @@ document.addEventListener('DOMContentLoaded', function () {
         assistantMsg.className = 'wa-assistant-bubble';
         assistantMsg.dataset.step = 'vehicle';
         assistantMsg.innerHTML = `
-            <p><strong>Aracınızın marka, model ve yılını yazar mısınız?</strong></p>
-            <p><strong>${escapeHtml(cat.vehicleHint)}</strong></p>
+            <span class="wa-step-pill">3. ADIM · ARAÇ BİLGİSİ</span>
+            <p><strong>En alttaki kutuya aracınızın marka, model ve yılını yazıp sağdaki sarı oka (→) basın.</strong></p>
+            <p>Örnek: <strong>2022 BMW 320i</strong> · Yazmak istemiyorsanız aşağıdaki <strong>"Araç bilgisi vermeden devam et"</strong> butonuna tıklayın 👇</p>
         `;
         bodyEl.appendChild(assistantMsg);
 
@@ -594,9 +608,10 @@ document.addEventListener('DOMContentLoaded', function () {
         assistantMsg.className = 'wa-assistant-bubble';
         assistantMsg.dataset.step = 'ready';
         assistantMsg.innerHTML = `
+            <span class="wa-step-pill">SON ADIM · WHATSAPP'A GEÇİN</span>
             <span class="wa-selected-badge">${escapeHtml(summaryParts.join(' • ') || 'Galini Çözüm Özeti')}</span>
-            <p><strong>Harika! Seçiminize göre WhatsApp mesajınızı hazırladık.</strong></p>
-            <p>Fiyat ve randevu bilgisi için aşağıdan doğrudan uzmanımıza bağlanabilir veya önceki menüye dönebilirsiniz.</p>
+            <p><strong>Hazır! Şimdi aşağıdaki yeşil butona tıklayın 👇</strong></p>
+            <p>Tek tıkla WhatsApp açılır ve seçimleriniz mesaj olarak otomatik yazılır.</p>
             ${cat ? `<a class="wa-page-link" href="${escapeHtml(cat.pageUrl)}">${escapeHtml(cat.pageLabel)}</a>` : ''}
         `;
         bodyEl.appendChild(assistantMsg);
@@ -606,8 +621,8 @@ document.addEventListener('DOMContentLoaded', function () {
         optionsGrid.dataset.step = 'ready';
         optionsGrid.innerHTML = `
             <button type="button" class="wa-option-card full-row is-whatsapp-cta" data-wa-text="${escapeHtml(waMessage)}">
-                <span class="wa-option-title">WhatsApp'tan Fiyat &amp; Bilgi Al &#8599;</span>
-                <span class="wa-option-desc">Hazır mesajınızla hemen görüşmeyi başlatın</span>
+                <span class="wa-option-title">WhatsApp'ta Gönder (Tıklayın) &#8599;</span>
+                <span class="wa-option-desc">Seçimleriniz otomatik yazılmış olarak WhatsApp açılır</span>
             </button>
             <button type="button" class="wa-option-card full-row wa-compact-card wa-back-card" data-action="prev-menu">
                 <span class="wa-option-title">&#8592; Önceki menü</span>

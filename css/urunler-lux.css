@@ -1,0 +1,69 @@
+/* Ürünler — premium, minimal vitrin */
+.lux-products { padding-top: 96px; }
+
+.lux-hero { text-align: center; padding: 56px 0 40px; }
+.lux-eyebrow { display: inline-block; color: var(--accent, #d8b46a); font-size: .68rem; font-weight: 600; letter-spacing: .32em; }
+.lux-hero h1 { margin: 22px 0 18px; font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: clamp(2.6rem, 6vw, 5rem); line-height: 1.05; letter-spacing: -.02em; color: #f6f7f9; }
+.lux-hero h1 em { color: var(--accent-strong, #f0cf84); font-style: italic; }
+.lux-hero p { max-width: 520px; margin: 0 auto; color: #9aa3b0; font-size: .95rem; line-height: 1.8; }
+.lux-brands { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 36px; list-style: none; margin: 44px 0 0; padding: 26px 0 0; border-top: 1px solid rgba(216, 180, 106, .16); }
+.lux-brands li { color: #6f7785; font-size: .72rem; font-weight: 700; letter-spacing: .26em; }
+
+.lux-tabs { position: sticky; top: 78px; z-index: 20; display: flex; justify-content: center; gap: 6px; width: fit-content; max-width: 100%; margin: 12px auto 0; padding: 6px; overflow-x: auto; scrollbar-width: none; background: rgba(12, 14, 18, .82); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid rgba(216, 180, 106, .18); border-radius: 999px; }
+.lux-tabs::-webkit-scrollbar { display: none; }
+.lux-tabs a { flex: 0 0 auto; padding: 9px 20px; border-radius: 999px; color: #c9ced6; font-size: .8rem; font-weight: 600; text-decoration: none; transition: background .2s ease, color .2s ease; }
+.lux-tabs a:hover, .lux-tabs a:focus-visible { background: rgba(216, 180, 106, .14); color: #f0cf84; outline: none; }
+
+.lux-section { padding-top: 88px; scroll-margin-top: 140px; }
+.lux-section > h2 { margin: 0 0 32px; font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: clamp(1.7rem, 3vw, 2.4rem); color: #f6f7f9; letter-spacing: -.01em; }
+
+/* PPF imza kartları */
+.lux-signature { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; margin-bottom: 22px; }
+.lux-sig-card { position: relative; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 12px; min-height: 300px; padding: 28px; overflow: hidden; border: 1px solid rgba(255, 255, 255, .07); border-radius: 18px; background: radial-gradient(ellipse at 20% 50%, rgba(255, 255, 255, .05), transparent 60%), #101217; transition: border-color .3s ease, transform .3s ease; }
+.lux-sig-card.is-premium { border-color: rgba(216, 180, 106, .38); background: radial-gradient(ellipse at 20% 50%, rgba(216, 180, 106, .14), transparent 62%), #12110e; }
+.lux-sig-card:hover { transform: translateY(-4px); border-color: rgba(216, 180, 106, .5); }
+.lux-sig-media img { width: 100%; max-height: 230px; object-fit: contain; filter: drop-shadow(0 18px 30px rgba(0, 0, 0, .5)); }
+.lux-sig-body h3 { margin: 8px 0 4px; font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: 1.6rem; color: #fff; }
+.lux-years { display: flex; align-items: baseline; gap: 6px; font-family: 'Playfair Display', Georgia, serif; font-size: 4.2rem; line-height: 1; color: var(--accent-strong, #f0cf84); }
+.lux-years small { font-family: 'Montserrat', sans-serif; font-size: .7rem; font-weight: 700; letter-spacing: .25em; color: #9aa3b0; }
+.lux-sig-body p { margin: 14px 0 0; color: #9aa3b0; font-size: .85rem; line-height: 1.6; }
+
+/* Ürün kartları */
+.lux-brand { display: block; color: var(--accent, #d8b46a); font-size: .62rem; font-weight: 700; letter-spacing: .22em; }
+.lux-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 18px; }
+.lux-card { display: flex; flex-direction: column; padding: 18px 18px 22px; border: 1px solid rgba(255, 255, 255, .06); border-radius: 16px; background: #101217; transition: border-color .3s ease, transform .3s ease, box-shadow .3s ease; }
+.lux-card:hover { transform: translateY(-4px); border-color: rgba(216, 180, 106, .4); box-shadow: 0 18px 40px rgba(0, 0, 0, .35); }
+.lux-media { display: grid; place-items: center; aspect-ratio: 1 / 1; margin-bottom: 18px; padding: 18px; border-radius: 12px; background: radial-gradient(circle at 50% 45%, rgba(255, 255, 255, .09), rgba(255, 255, 255, .015) 70%); overflow: hidden; }
+.lux-media img { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 12px 22px rgba(0, 0, 0, .45)); transition: transform .4s ease; }
+.lux-card:hover .lux-media img { transform: scale(1.05); }
+.lux-card h3 { margin: 8px 0 6px; font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: 1.3rem; color: #fff; }
+.lux-card p { margin: 0; color: #8d96a5; font-size: .8rem; }
+
+.lux-closing { margin: 110px 0 20px; text-align: center; font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1.4rem, 3vw, 2.1rem); color: #d7dbe1; }
+.lux-closing em { color: var(--accent-strong, #f0cf84); }
+
+@media (max-width: 980px) {
+    .lux-signature { grid-template-columns: 1fr; }
+    .lux-tabs { top: 70px; }
+}
+
+@media (max-width: 600px) {
+    .lux-products { padding-top: 72px; }
+    .lux-hero { padding: 36px 0 28px; }
+    .lux-brands { gap: 10px 22px; }
+    .lux-tabs { justify-content: flex-start; width: 100%; }
+    .lux-tabs a { padding: 8px 15px; font-size: .76rem; }
+    .lux-section { padding-top: 64px; }
+    .lux-sig-card { grid-template-columns: 1fr 1.1fr; min-height: 0; padding: 20px; }
+    .lux-years { font-size: 3.2rem; }
+    .lux-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .lux-card { padding: 12px 12px 16px; }
+    .lux-media { padding: 10px; margin-bottom: 12px; }
+    .lux-card h3 { font-size: 1.08rem; }
+    .lux-card p { font-size: .74rem; }
+    .lux-closing { margin-top: 80px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .lux-card, .lux-sig-card, .lux-media img { transition: none; }
+}

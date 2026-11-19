@@ -430,6 +430,21 @@ body.whatsapp-modal-open {
     letter-spacing: 0.04em;
 }
 
+.wa-step-pill {
+    display: inline-block;
+    margin-bottom: 8px;
+    margin-right: 6px;
+    padding: 3px 8px;
+    border-radius: 999px;
+    background: rgba(240, 207, 132, 0.16);
+    border: 1px solid rgba(240, 207, 132, 0.45);
+    color: #f0cf84;
+    font-size: 0.67rem;
+    font-weight: 800;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+}
+
 .wa-page-link {
     display: inline-block;
     margin-top: 4px;
@@ -462,15 +477,16 @@ body.whatsapp-modal-open {
 }
 
 .wa-option-card {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
     width: 100%;
     min-height: 0;
-    padding: 13px 14px;
+    padding: 13px 32px 13px 14px;
     margin: 0;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(240, 207, 132, 0.22);
     border-radius: 13px;
     background: #12161c;
     color: #f3f5f8;
@@ -518,6 +534,19 @@ body.whatsapp-modal-open {
     justify-content: center;
 }
 
+.wa-option-card:not(.wa-compact-card):not(.is-whatsapp-cta):not(.is-featured)::after {
+    content: '›';
+    position: absolute;
+    right: 13px;
+    top: 50%;
+    transform: translateY(-52%);
+    color: rgba(240, 207, 132, 0.75);
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1;
+    pointer-events: none;
+}
+
 .wa-option-card.wa-back-card {
     background: rgba(255, 255, 255, 0.025);
     border-style: dashed;
@@ -550,6 +579,13 @@ body.whatsapp-modal-open {
     background: #0f1318;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     flex-shrink: 0;
+    transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.wa-assistant-composer.is-guided {
+    background: #15181e;
+    border-top: 2px solid #f0cf84;
+    box-shadow: 0 -4px 18px rgba(216, 180, 106, 0.16);
 }
 
 .wa-assistant-input {
